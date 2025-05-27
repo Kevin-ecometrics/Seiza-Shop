@@ -1,2 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+    --color-seiza-principal: #D9ADBD;
+    --color-seiza-secundario: #57F2E3;
+    --color-seiza-terciario: #D9B68B;
+    --color-seiza-cuaternario: #8C5A2E;
+    --color-seiza-quintario: #F2E9E9;
+}

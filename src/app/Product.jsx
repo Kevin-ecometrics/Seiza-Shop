@@ -2,30 +2,18 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  IoChevronBack,
-  IoChevronForward,
-  IoCart,
-  IoHeart,
-} from "react-icons/io5";
+import { IoChevronBack, IoChevronForward, IoCart } from "react-icons/io5";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
-function Product({
-  favorites = [],
-  cart = [],
-  addToFavorites,
-  removeFromFavorites,
-  addToCart,
-  removeFromCart,
-}) {
+function Product() {
   const [currentPosition, setCurrentPosition] = useState(0);
   const [isAutoRotating, setIsAutoRotating] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(0);
+  const [stock, setStock] = useState(null);
+  const router = useRouter();
 
-  // Simulación de stock
-  const stock = 7;
-
-  // Calcula el precio total según la cantidad seleccionada
   const unitPrice = 2400;
   const totalPrice = unitPrice * quantity;
 
@@ -72,33 +60,45 @@ function Product({
     src: positions[0].src,
     alt: "Banco Seiza para Meditación",
     price: unitPrice,
-    stock,
-  };
-
-  const isFavorite = favorites.some((item) => item.id === mainProduct.id);
-  const isInCart = cart.some((item) => item.id === mainProduct.id);
-
-  const handleToggleFavorite = () => {
-    if (isFavorite) {
-      removeFromFavorites(mainProduct.id);
-    } else {
-      addToFavorites(mainProduct);
-    }
-  };
-
-  const handleAddToCart = () => {
-    if (!isInCart && quantity > 0 && quantity <= stock) {
-      addToCart({ ...mainProduct, quantity, total: totalPrice });
-    }
+    quantity,
+    total: totalPrice,
   };
 
   const handleQuantityChange = (delta) => {
     setQuantity((prev) => {
-      const next = prev + delta;
-      if (next < 1) return 1;
-      if (next > stock) return stock;
+      let next = prev + delta;
+      if (next < 0) next = 0;
+      if (stock && next > stock) next = stock;
       return next;
     });
+  };
+
+  useEffect(() => {
+    const fetchStock = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/stock");
+        if (Array.isArray(response.data) && response.data.length > 0) {
+          setStock(response.data[0].stock);
+        } else {
+          setStock(0);
+        }
+      } catch (error) {
+        setStock(0);
+      }
+    };
+    fetchStock();
+  }, []);
+
+  const handleBuyNow = () => {
+    if (quantity > 0 && (!stock || quantity <= stock)) {
+      if (typeof window !== "undefined") {
+        window.sessionStorage.setItem(
+          "checkout_cart",
+          JSON.stringify([{ ...mainProduct }])
+        );
+      }
+      router.push("/checkout");
+    }
   };
 
   return (
@@ -269,7 +269,7 @@ function Product({
                       stock > 0 ? "text-green-600" : "text-red-600"
                     }`}
                   >
-                    {stock > 0 ? `${stock} piezas` : "Agotado"}
+                    {stock > 0 ? stock : "Agotado"}
                   </span>
                 </div>
                 <div className="flex justify-between items-center py-3">
@@ -297,54 +297,39 @@ function Product({
                 <div className="flex items-center gap-4 mb-2">
                   <span className="text-gray-700">Cantidad:</span>
                   <button
-                    className="bg-gray-200 px-2 py-1 rounded text-lg font-bold"
+                    className="bg-gray-200 px-2 py-1 rounded text-lg font-bold cursor-pointer"
                     onClick={() => handleQuantityChange(-1)}
-                    disabled={quantity <= 1}
+                    disabled={quantity <= 0}
                   >
                     -
                   </button>
-                  <span className="w-8 text-center">{quantity}</span>
+                  <span className="w-8 text-center select-none">
+                    {quantity}
+                  </span>
                   <button
-                    className="bg-gray-200 px-2 py-1 rounded text-lg font-bold"
+                    className="bg-gray-200 px-2 py-1 rounded text-lg font-bold cursor-pointer"
                     onClick={() => handleQuantityChange(1)}
-                    disabled={quantity >= stock}
+                    disabled={stock && quantity >= stock}
                   >
                     +
                   </button>
-                  <span className="text-gray-500 text-sm">(Máx: {stock})</span>
+                  <span className="text-gray-500 text-sm">
+                    (Máx: {stock ?? "-"})
+                  </span>
                 </div>
                 <motion.button
-                  className={`w-full bg-blue-500 text-white font-bold py-4 px-8 rounded-2xl hover:bg-blue-600 transition-all duration-200 shadow flex items-center justify-center gap-2 ${
-                    isInCart || stock === 0 || quantity < 1
+                  className={`w-full bg-blue-600 text-white font-bold py-4 px-8 rounded-2xl hover:bg-blue-700 transition-all duration-200 shadow flex items-center justify-center gap-2 ${
+                    stock === 0 || quantity < 1
                       ? "opacity-60 cursor-not-allowed"
                       : ""
                   }`}
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={handleAddToCart}
-                  disabled={isInCart || stock === 0 || quantity < 1}
+                  onClick={handleBuyNow}
+                  disabled={stock === 0 || quantity < 1}
                 >
                   <IoCart size={20} />
-                  {isInCart
-                    ? "En carrito"
-                    : stock === 0
-                    ? "Sin stock"
-                    : quantity < 1
-                    ? "Selecciona cantidad"
-                    : "Añadir al carrito"}
-                </motion.button>
-                <motion.button
-                  className={`w-full ${
-                    isFavorite
-                      ? "bg-red-500 text-white"
-                      : "bg-gray-100 text-gray-700"
-                  } font-medium py-3 px-8 rounded-2xl hover:bg-gray-200 transition-all duration-200 border border-gray-200 flex items-center justify-center gap-2`}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  onClick={handleToggleFavorite}
-                >
-                  <IoHeart size={18} />
-                  {isFavorite ? "En Favoritos" : "Guardar en Favoritos"}
+                  Comprar ahora
                 </motion.button>
               </motion.div>
             </div>
