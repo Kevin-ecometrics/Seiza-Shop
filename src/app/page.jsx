@@ -1,5 +1,3 @@
-"use client";
-import React, { useState } from "react";
 import Hero from "./Hero";
 import Product from "./Product";
 import Navbar from "./Navbar";
