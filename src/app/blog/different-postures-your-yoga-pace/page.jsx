@@ -1,0 +1,169 @@
+"use client";
+import React from "react";
+import { motion } from "framer-motion";
+import Navbar from "../../Navbar";
+import Footer from "../../Footer";
+import { useLanguage } from "../../context/LanguageContext";
+
+function page() {
+  const { language } = useLanguage();
+  const isEn = language === "en";
+
+  return (
+    <div>
+      <Navbar />
+      <section className="relative">
+        <motion.img
+          src="/banner_blog_inside.webp"
+          className="h-screen w-full object-cover"
+          alt="banner"
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        />
+        <motion.h1
+          className="absolute bottom-10 left-10 text-[20px] md:text-[60px] text-white font-bold drop-shadow-[4px_4px_8px_rgba(0,0,0,0.8)] [text-shadow:2px_2px_4px_rgba(0,0,0,0.9)] stroke-2 stroke-black"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+        >
+          {isEn
+            ? "Yoga Poses: Your Practice, Your Rhythm"
+            : "Diferentes Posturas: Tu Yoga, Tu Ritmo"}
+        </motion.h1>
+      </section>
+
+      <article className="bg-[url(/background.webp)] bg-cover bg-center px-6 md:px-12 py-8 font-normal ">
+        {/* Introducción */}
+        <p className="text-black text-[18px] md:text-[25px] mb-8 leading-relaxed">
+          {isEn
+            ? "Yoga doesn’t demand perfection. You can start today, at home, during a break, with nothing more than willingness. Morning calm or work stress—it adapts to you, not the other way around."
+            : "El yoga no exige condiciones perfectas. Puedes empezar hoy, en casa, en un rato libre, sin más requisito que las ganas de probar. No importa si es por la mañana con calma o en una pausa del trabajo, entre el estrés y el ajetreo. Esta práctica se adapta a ti, no al revés."}
+        </p>
+        <p className="text-black text-[18px] md:text-[25px] mb-8 leading-relaxed">
+          {isEn
+            ? "Its physical, emotional, and mental benefits are a gift to those who practice it consistently and listen to their bodies. Yoga is not a competition or a pose—it’s an internal dialogue seeking balance."
+            : "Sus beneficios físicos, emocionales, mentales son un regalo para quien lo cultiva con constancia y escucha su cuerpo. El yoga no es una competencia ni una pose; es un diálogo interno que busca equilibrio."}
+        </p>
+        <p className="text-black text-[18px] md:text-[25px] mb-12 leading-relaxed italic">
+          {isEn
+            ? "The only real rule in yoga? Start. With humility and patience. The rest will come with time and practice."
+            : "¿La única regla verdadera de las posturas? Empezar. Con humildad, sin pretensiones, permitiéndote fluir hacia tu propio bienestar. El resto, vendrá con el tiempo y la práctica."}
+        </p>
+
+        {/* Postura: La Barca */}
+        <h2 className="text-[35px] md:text-[50px] font-bold mb-6">
+          {isEn ? "Boat Pose (Naukasana)" : "La Barca (Naukasana)"}
+        </h2>
+        <p className="text-xl mb-8 leading-relaxed">
+          {isEn
+            ? "An excellent pose for spine flexibility and core strength. At first, it may feel challenging, but the goal is progress, not perfection. Try these modifications if you're new:"
+            : "Una de las mejores asanas para estirar la columna y promover la flexibilidad, además de fortalecer el núcleo abdominal. Al principio puede parecer un reto, pero lo importante es progresar, no perfeccionar."}
+        </p>
+        <ul className="list-disc list-inside text-xl mb-12 space-y-2">
+          <li>
+            {isEn
+              ? "Keep legs a few inches off the floor."
+              : "No levantes las piernas por completo (mantenlas a unos centímetros del suelo)."}
+          </li>
+          <li>
+            {isEn
+              ? "Slightly bend your knees to reduce tension."
+              : "Dobla ligeramente las rodillas para reducir la tensión."}
+          </li>
+          <li>
+            {isEn
+              ? "Place hands under glutes for lower back support."
+              : "Coloca las manos bajo los glúteos para apoyar la pelvis si sientes demasiada presión en la zona lumbar."}
+          </li>
+        </ul>
+
+        {/* Postura: La Pinza */}
+        <h2 className="text-[35px] md:text-[50px] font-bold mb-6">
+          {isEn ? "Seated Forward Bend" : "La Pinza"}
+        </h2>
+        <p className="text-xl mb-12 leading-relaxed">
+          {isEn
+            ? "This pose involves leaning forward to rest the chest on your legs. It can be difficult at first, but improves flexibility over time. Keep your back straight and reach only as far as comfortable."
+            : "Consiste en inclinarse hacia adelante hasta que puedas sostener el pecho con las piernas. Puede ser difícil al principio, pero mejora la flexibilidad. La columna no debe arquearse, puedes empezar colocando manos en rodillas o pantorrillas."}
+        </p>
+
+        {/* Postura: Balasana */}
+        <h2 className="text-[35px] md:text-[50px] font-bold mb-6">
+          {isEn ? "Child’s Pose (Balasana)" : "Postura del Niño (Balasana)"}
+        </h2>
+        <p className="text-xl mb-12 leading-relaxed">
+          {isEn
+            ? "A place of calm within your practice. Sit on your heels, bring your torso forward, and rest your forehead on the floor. Stretch your arms forward or rest them beside your body. Breathe deeply and let go."
+            : "También conocida como la postura de la hoja, es ese rincón de calma en medio de la práctica. Siéntate sobre tus talones, lleva el torso hacia adelante y apoya la frente en el suelo. Brazos estirados o junto al cuerpo. Respira hondo y déjate ser."}
+        </p>
+
+        {/* Postura: Perro Boca Abajo */}
+        <h2 className="text-[35px] md:text-[50px] font-bold mb-6">
+          {isEn
+            ? "Downward Dog (Adho Mukha Svanasana)"
+            : "Perro Boca Abajo (Adho Mukha Svanasana)"}
+        </h2>
+        <p className="text-xl mb-12 leading-relaxed">
+          {isEn
+            ? "Great for stretching muscles, lengthening the spine, and energizing the body. Hands and feet grounded, hips lifted. If hamstrings are tight, bend the knees slightly."
+            : "Estira músculos, alarga la columna, fortalece cuello y espalda. Apoya manos y pies en el suelo, eleva las caderas. Si los isquiotibiales están tensos, dobla ligeramente las rodillas."}
+        </p>
+
+        {/* Postura: Montaña */}
+        <h2 className="text-[35px] md:text-[50px] font-bold mb-6">
+          {isEn
+            ? "Mountain Pose (Tadasana)"
+            : "Postura de la Montaña (Tadasana)"}
+        </h2>
+        <p className="text-xl mb-12 leading-relaxed">
+          {isEn
+            ? "One of the most basic but essential poses. Activates muscle groups and promotes focus and grounding."
+            : "Una de las posturas más básicas pero esenciales. Activa grupos musculares y promueve la concentración y la relajación del cuerpo."}
+        </p>
+
+        {/* Postura: Meditación */}
+        <h2 className="text-[35px] md:text-[50px] font-bold mb-6">
+          {isEn
+            ? "Meditation Pose (Sukhasana or Padmasana)"
+            : "Postura de Meditación (Sukhasana o Padmasana)"}
+        </h2>
+        <p className="text-xl mb-12 leading-relaxed">
+          {isEn
+            ? "Ideal to begin or close your practice. Sit on a cushion or folded blanket. Knees relaxed, hands in mudra or resting on thighs. Elongate the spine, relax the shoulders."
+            : "Ideal para comenzar o cerrar tu práctica. Siéntate sobre un cojín o manta doblada. Rodillas relajadas, manos en mudra o sobre los muslos. Espalda alargada y hombros relajados."}
+        </p>
+
+        {/* Postura: Phalakasana */}
+        <h2 className="text-[35px] md:text-[50px] font-bold mb-6">
+          {isEn ? "Plank (Phalakasana)" : "Phalakasana (Tabla o Plancha)"}
+        </h2>
+        <p className="text-xl mb-12 leading-relaxed">
+          {isEn
+            ? "Simple in appearance, but powerful. Strengthens the core and the whole body. Align shoulders with wrists, engage your core, and keep the breath steady."
+            : "Aparentemente simple, pero poderosa. Fortalece el abdomen y todo el cuerpo. Alinea hombros con muñecas, activa el core y respira de forma constante."}
+        </p>
+
+        {/* Banco Seiza */}
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-16 items-start">
+          <div className="h-[300px] md:h-[400px] xl:h-[600px] w-full bg-[#D9D9D9] rounded-lg flex items-center justify-center text-center p-8"></div>
+          <div className="w-full">
+            <h2 className="text-[35px] md:text-[50px] font-bold mb-8">
+              {isEn
+                ? "Support Your Practice with Our Seiza Bench"
+                : "Complementa tu práctica con nuestro banco Seiza"}
+            </h2>
+            <p className="text-xl mb-4 leading-relaxed">
+              {isEn
+                ? "Made from 100% natural poplar, this ergonomic bench provides firm and lightweight support. It helps you keep an aligned posture, allowing longer and more comfortable sessions."
+                : "Fabricado con álamo 100% natural, su diseño ergonómico ofrece soporte firme y ligero. Ayuda a mantener una postura alineada y permite sesiones más largas sin forzar rodillas o espalda."}
+            </p>
+          </div>
+        </div>
+      </article>
+      <Footer />
+    </div>
+  );
+}
+
+export default page;

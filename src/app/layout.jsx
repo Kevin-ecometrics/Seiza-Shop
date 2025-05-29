@@ -2,77 +2,54 @@ import "./globals.css";
 import { LanguageProvider } from "./context/LanguageContext";
 
 export const metadata = {
-  title: {
-    default: "Seiza Store - Tienda Online Moderna",
-    template: "%s | Seiza Store",
-  },
+  title: "Seiza Shop - Modern Online Shop for Wellness and Lifestyle",
   description:
-    "Descubre los mejores productos en Seiza Store. Tu tienda online moderna con envío gratuito y atención personalizada.",
+    "Explore top-quality wellness, lifestyle, and home products at Seiza Shop. Enjoy a personalized shopping experience with fast and free shipping.",
   keywords: [
-    "tienda online",
+    "online Shop",
     "e-commerce",
-    "productos",
-    "compras online",
-    "envío gratuito",
-    "seiza store",
-    "moda",
-    "tecnología",
-    "hogar",
+    "products",
+    "online shopping",
+    "free shipping",
+    "seiza Shop",
+    "fashion",
+    "technology",
+    "home",
   ],
-  authors: [
-    { name: "Tu Nombre" },
-    { name: "Seiza Store Team", url: "https://seizastore.com" },
-  ],
-  creator: "Seiza Store",
-  publisher: "Seiza Store",
-
-  // Open Graph (Facebook, WhatsApp, etc.)
+  authors: [{ name: "Seiza Shop Team", url: "http://seiza.shop/" }],
+  creator: "Seiza Shop",
+  publisher: "Seiza Shop",
   openGraph: {
     type: "website",
-    locale: "es_ES",
-    url: "https://seizastore.com",
-    title: "Seiza Store - Tienda Online Moderna",
+    locale: "en_US",
+    url: "http://seiza.shop/",
+    title: "Seiza Shop - Modern Online Shop for Wellness and Lifestyle",
     description:
-      "Descubre los mejores productos en Seiza Store. Tu tienda online moderna con envío gratuito y atención personalizada.",
-    siteName: "Seiza Store",
+      "Explore wellness, lifestyle, and home essentials at Seiza Shop. Shop confidently with free shipping, curated collections, and reliable support.",
+    siteName: "Seiza Shop",
     images: [
       {
-        url: "/og-image.jpg", // Agrega esta imagen a tu carpeta public
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Seiza Store - Tienda Online",
+        alt: "Seiza Shop - Online Shopping",
       },
     ],
   },
-
-  // Robots
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
-
-  // Información adicional
   category: "e-commerce",
-  classification: "Tienda Online",
-
-  // Metadata adicional
-  metadataBase: new URL("https://seizastore.com"), // Cambia por tu dominio
+  classification: "Online Shop",
+  metadataBase: new URL("http://seiza.shop/"),
   alternates: {
     canonical: "/",
     languages: {
-      "es-ES": "/es",
       "en-US": "/en",
+      "es-ES": "/es",
     },
   },
-
-  // Iconos
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
@@ -82,7 +59,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es">
+    <html lang="en">
       <body className="overflow-x-hidden">
         <LanguageProvider>{children}</LanguageProvider>
       </body>

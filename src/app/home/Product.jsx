@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { IoChevronBack, IoChevronForward, IoCart } from "react-icons/io5";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import { useLanguage } from "../app/context/LanguageContext";
+import { useLanguage } from "../context/LanguageContext";
 
 function Product() {
   const { language } = useLanguage();

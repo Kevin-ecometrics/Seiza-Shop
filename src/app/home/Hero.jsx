@@ -26,16 +26,16 @@ export default function Hero() {
   return (
     <div className="relative text-center mt-0">
       <div className="relative w-screen h-screen overflow-hidden">
-        <AnimatePresence initial={false} mode="wait">
+        <AnimatePresence mode="wait">
           <motion.img
             key={banners[index].src}
             src={banners[index].src}
             alt={banners[index].alt}
             className="absolute inset-0 w-full h-full object-cover"
-            initial={{ opacity: 0, scale: 0.98 }}
+            initial={{ scale: 1.1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 1.02 }}
-            transition={{ duration: 0.5 }}
           />
         </AnimatePresence>
         <button

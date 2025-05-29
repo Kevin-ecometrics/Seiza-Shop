@@ -1,10 +1,10 @@
-import Hero from "./Hero";
-import About from "./About";
-import Product from "./Product";
+import Hero from "./home/Hero";
+import About from "./home/About";
+import Product from "./home/Product";
 import Navbar from "./Navbar";
-import Benefits from "./Benefits";
+import Benefits from "./home/Benefits";
 import Footer from "./Footer";
-import UseMode from "./UseMode";
+import UseMode from "./home/UseMode";
 
 function page() {
   return (

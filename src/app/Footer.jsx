@@ -2,10 +2,61 @@
 import React from "react";
 import Link from "next/link";
 import { useLanguage } from "./context/LanguageContext";
+import { usePathname } from "next/navigation";
+
+const blogLinks = [
+  {
+    url: "/blog/meditation-power-transform-mind-body-emotions",
+    title: {
+      en: "Meditation: The Power to Transform Your Mind, Body, and Emotions",
+      es: "Meditación: El Poder de Transformar tu Mente, Cuerpo y Emociones",
+    },
+  },
+  {
+    url: "/blog/types-of-meditation-find-your-practice",
+    title: {
+      en: "Types of Meditation: Find the Practice That Resonates With You",
+      es: "Tipos de Meditación: Encuentra la Práctica que Resuena Contigo",
+    },
+  },
+  {
+    url: "/blog/different-postures-your-yoga-pace",
+    title: {
+      en: "Different Postures: Your Yoga, Your Pace",
+      es: "Diferentes Posturas: Tu Yoga, Tu Ritmo",
+    },
+  },
+  {
+    url: "/blog/seiza-simple-posture-healthy-spine-peaceful-mind",
+    title: {
+      en: "Seiza: A Simple Posture for a Healthy Spine and a Peaceful Mind",
+      es: "Seiza: Una Simple Postura para una Columna Sana y una Mente en Paz",
+    },
+  },
+  {
+    url: "/blog/how-to-meditate-starting-from-scratch",
+    title: {
+      en: "How to Meditate: Starting from Scratch",
+      es: "Cómo Meditar: Empezar desde cero",
+    },
+  },
+  {
+    url: "/blog/meditation-myths-truth-behind-practice",
+    title: {
+      en: "Meditation Myths: Discovering the Truth Behind the Practice",
+      es: "Mitos sobre la meditación: Descubriendo la verdad detrás de la práctica",
+    },
+  },
+];
 
 function Footer() {
   const { language } = useLanguage();
   const isEn = language === "en";
+
+  const pathname = usePathname();
+
+  // Mostrar links solo si estamos en /blog o sub-rutas
+  const isBlogPath = pathname === "/blog" || pathname.startsWith("/blog/");
 
   return (
     <footer className="w-full bg-[url(/background.webp)] bg-cover bg-center text-[#8C5A2E] font-bold px-8 md:px-16 py-12 relative overflow-hidden">
@@ -80,6 +131,26 @@ function Footer() {
           </div>
         </div>
       </div>
+
+      {isBlogPath && (
+        <div className="mt-6 border-t border-[#8C5A2E] pt-4">
+          <h3 className="font-normal mb-2 text-center text-xl md:text-3xl text-black">
+            {isEn ? "Blog Posts" : "Artículos del Blog"}
+          </h3>
+          <ul className="gap-4 text-center text-lg grid grid-cols-1 xl:grid-cols-3">
+            {blogLinks.map(({ url, title }) => (
+              <li key={url}>
+                <Link
+                  href={url}
+                  className="hover:underline text-sm md:text-base"
+                >
+                  {isEn ? title.en : title.es}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </footer>
   );
 }

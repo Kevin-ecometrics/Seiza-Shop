@@ -129,7 +129,7 @@ app.post("/save-order", async (req, res) => {
 
     // 3. Configurar contenido del correo según idioma
     const subject = isEn
-      ? "Order Confirmation - Seiza Store"
+      ? "Order Confirmation - Seiza Shop"
       : "Confirmación de compra - Tienda Seiza";
 
     const html = isEn
@@ -174,7 +174,7 @@ app.post("/save-order", async (req, res) => {
     // 4. Enviar correo con Nodemailer
     await transporter.sendMail({
       from: isEn
-        ? '"Seiza Store" <meditate@seiza.shop>'
+        ? '"Seiza Shop" <meditate@seiza.shop>'
         : '"Tienda Seiza" <meditate@seiza.shop>',
       to: email,
       cc: "meditate@seiza.shop",
@@ -187,6 +187,132 @@ app.post("/save-order", async (req, res) => {
   } catch (err) {
     console.error("Error guardando compra:", err);
     res.status(500).json({ error: "Error guardando la compra" });
+  }
+});
+
+app.post("/api/send-email", async (req, res) => {
+  try {
+    const { nombre, apellidos, telefono, email, mensaje, isEn } = req.body;
+
+    // Validar que todos los campos estén presentes
+    if (!nombre || !apellidos || !telefono || !email || !mensaje) {
+      return res.status(400).json({
+        success: false,
+        message: isEn
+          ? "All fields are required"
+          : "Todos los campos son requeridos",
+      });
+    }
+
+    // Validar formato de email
+    const emailRegex = /\S+@\S+\.\S+/;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({
+        success: false,
+        message: isEn ? "Invalid email format" : "Formato de email inválido",
+      });
+    }
+
+    // Configurar textos según el idioma
+    const texts = {
+      subject: isEn
+        ? `New contact message from ${nombre} ${apellidos}`
+        : `Nuevo mensaje de contacto de ${nombre} ${apellidos}`,
+
+      title: isEn ? "New Contact Message" : "Nuevo Mensaje de Contacto",
+
+      clientInfo: isEn ? "Client Information:" : "Información del Cliente:",
+
+      labels: {
+        name: isEn ? "Name:" : "Nombre:",
+        phone: isEn ? "Phone:" : "Teléfono:",
+        email: isEn ? "Email:" : "Email:",
+        message: isEn ? "Message:" : "Mensaje:",
+      },
+
+      footer: isEn
+        ? "This message was sent from seiza.shop contact form."
+        : "Este mensaje fue enviado desde el formulario de contacto de seiza.shop.",
+
+      date: isEn ? "Date:" : "Fecha:",
+    };
+
+    // Configurar el contenido del email - UN SOLO EMAIL
+    const mailOptions = {
+      from: isEn
+        ? '"Seiza Shop" <meditate@seiza.shop>'
+        : '"Tienda Seiza" <meditate@seiza.shop>',
+      to: email,
+      cc: "meditate@seiza.shop", // Tu email donde quieres recibir los mensajes
+      subject: texts.subject,
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <h2 style="color: #8C5A2E; border-bottom: 2px solid #8C5A2E; padding-bottom: 10px;">
+            ${texts.title}
+          </h2>
+          
+          <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h3 style="color: #333; margin-top: 0;">${texts.clientInfo}</h3>
+            <p><strong>${texts.labels.name}</strong> ${nombre} ${apellidos}</p>
+            <p><strong>${texts.labels.phone}</strong> ${telefono}</p>
+            <p><strong>${texts.labels.email}</strong> ${email}</p>
+          </div>
+          
+          <div style="background-color: #fff; padding: 20px; border-left: 4px solid #8C5A2E; margin: 20px 0;">
+            <h3 style="color: #333; margin-top: 0;">${texts.labels.message}</h3>
+            <p style="line-height: 1.6; color: #555;">${mensaje}</p>
+          </div>
+          
+          <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; font-size: 12px; color: #666;">
+            <p>${texts.footer}</p>
+            <p>${texts.date} ${new Date().toLocaleString(
+        isEn ? "en-US" : "es-MX",
+        {
+          timeZone: "America/Tijuana",
+        }
+      )}</p>
+            <p><strong>${isEn ? "Language:" : "Idioma:"}</strong> ${
+        isEn ? "English" : "Español"
+      }</p>
+          </div>
+        </div>
+      `,
+      text: `
+        ${texts.title}
+        
+        ${texts.labels.name} ${nombre} ${apellidos}
+        ${texts.labels.phone} ${telefono}
+        ${texts.labels.email} ${email}
+        
+        ${texts.labels.message}
+        ${mensaje}
+        
+        ${texts.date} ${new Date().toLocaleString(isEn ? "en-US" : "es-MX", {
+        timeZone: "America/Tijuana",
+      })}
+        ${isEn ? "Language:" : "Idioma:"} ${isEn ? "English" : "Español"}
+      `,
+    };
+
+    // Enviar el email
+    const info = await transporter.sendMail(mailOptions);
+
+    // Respuesta exitosa
+    res.status(200).json({
+      success: true,
+      message: isEn ? "Email sent successfully" : "Email enviado correctamente",
+      messageId: info.messageId,
+    });
+  } catch (error) {
+    console.error("Error enviando email:", error);
+
+    res.status(500).json({
+      success: false,
+      message: isEn
+        ? "Internal server error while sending email"
+        : "Error interno del servidor al enviar el email",
+      error: process.env.NODE_ENV === "development" ? error.message : undefined,
+    });
   }
 });
 

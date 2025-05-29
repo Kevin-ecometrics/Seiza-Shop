@@ -68,8 +68,12 @@ function Navbar() {
           <option value="" disabled>
             Language / Idioma
           </option>
-          <option value="en">English</option>
-          <option value="es">Español</option>
+          <option value="en" className="text-[#8C5A2E]">
+            English
+          </option>
+          <option value="es" className="text-[#8C5A2E]">
+            Español
+          </option>
         </select>
       </div>
     </nav>

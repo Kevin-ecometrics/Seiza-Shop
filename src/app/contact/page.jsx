@@ -4,6 +4,9 @@ import React, { useState } from "react";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import { useLanguage } from "../context/LanguageContext";
+import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
+import { motion } from "framer-motion";
 
 function ContactPage() {
   const { language } = useLanguage();
@@ -16,7 +19,7 @@ function ContactPage() {
     mensaje: "",
   });
   const [errors, setErrors] = useState({});
-  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const validate = () => {
     const newErrors = {};
@@ -43,14 +46,52 @@ function ContactPage() {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validate();
     setErrors(validationErrors);
+
     if (Object.keys(validationErrors).length === 0) {
-      setSubmitted(true);
-      // Aquí puedes agregar la lógica para enviar el formulario
-      // Reset form if needed: setFormData({ nombre: "", apellidos: "", telefono: "", email: "", mensaje: "" });
+      setLoading(true);
+      try {
+        const response = await axios.post(
+          "http://localhost:5000/api/send-email",
+          {
+            ...formData,
+            isEn: isEn,
+          }
+        );
+
+        if (response.data.success) {
+          toast.success(
+            isEn
+              ? "Message sent successfully!"
+              : "¡Mensaje enviado exitosamente!"
+          );
+          setFormData({
+            nombre: "",
+            apellidos: "",
+            telefono: "",
+            email: "",
+            mensaje: "",
+          });
+        } else {
+          toast.error(
+            isEn
+              ? "Something went wrong. Please try again."
+              : "Algo salió mal. Intenta de nuevo."
+          );
+        }
+      } catch (error) {
+        console.error("Error sending email:", error);
+        toast.error(
+          isEn
+            ? "Error sending message. Please try again."
+            : "Error al enviar mensaje. Inténtalo de nuevo."
+        );
+      } finally {
+        setLoading(false);
+      }
     }
   };
 
@@ -64,16 +105,25 @@ function ContactPage() {
 
   return (
     <div>
+      <Toaster position="top-right" />
       <Navbar />
       <section className="relative">
-        <img
+        <motion.img
           src="/banner_contact.webp"
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="h-screen w-full object-cover"
           alt="contact"
         />
-        <h1 className="absolute inset-0 flex items-center justify-center text-[48px] md:text-[120px] text-[#8C5A2E] font-bold pointer-events-none select-none drop-shadow-lg">
+        <motion.h1
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+          className="absolute inset-0 flex items-center justify-center text-[48px] md:text-[120px] text-[#8C5A2E] font-bold pointer-events-none select-none drop-shadow-lg"
+        >
           {isEn ? "Contact" : "Contacto"}
-        </h1>
+        </motion.h1>
       </section>
       <section className="flex flex-col bg-[url(/background.webp)] bg-cover bg-center items-center px-4 py-16 ">
         <form onSubmit={handleSubmit} noValidate>
@@ -170,16 +220,28 @@ function ContactPage() {
           </div>
           <button
             type="submit"
-            className="px-8 bg-[#8C5A2E] hover:bg-[#6b411c] text-white font-semibold py-3 rounded-full text-lg shadow transition"
+            disabled={loading}
+            className={`px-8 py-3 rounded-full text-lg shadow transition font-semibold ${
+              loading
+                ? "bg-gray-400 cursor-not-allowed text-gray-200"
+                : "bg-[#8C5A2E] hover:bg-[#6b411c] text-white"
+            }`}
           >
-            {isEn ? "Send Message" : "Enviar mensaje"}
+            {loading
+              ? isEn
+                ? "Sending..."
+                : "Enviando..."
+              : isEn
+              ? "Send Message"
+              : "Enviar mensaje"}
           </button>
           <p className="mt-8 text-xl">
             <strong>
-              Dirección: <br /> <br />
+              {isEn ? "Address:" : "Dirección:"} <br /> <br />
             </strong>
-            Calle Ignacio Zaragoza, Gustavo Madero #8169-306, C.P. 22000
-            Tijuana, Baja California, México.
+            {isEn
+              ? "Calle Ignacio Zaragoza, Gustavo Madero #8169-306, C.P. 22000 Tijuana, Baja California, Mexico."
+              : "Calle Ignacio Zaragoza, Gustavo Madero #8169-306, C.P. 22000 Tijuana, Baja California, México."}
           </p>
         </form>
       </section>
