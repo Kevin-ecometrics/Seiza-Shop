@@ -2,19 +2,13 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { useLanguage } from "../app/context/LanguageContext";
 
 const banners = [
-  { src: "/2. Banners SEIZA.webp", alt: "Seiza Banner 1" },
-  { src: "/3. Banners SEIZA.webp", alt: "Seiza Banner 2" },
-  { src: "/4. Banners SEIZA.webp", alt: "Seiza Banner 3" },
-  { src: "/5. Banners SEIZA.webp", alt: "Seiza Banner 4" },
   { src: "/6. Banners SEIZA.webp", alt: "Seiza Banner 5" },
+  { src: "/4. Banners SEIZA.webp", alt: "Seiza Banner 3" },
 ];
 
 export default function Hero() {
-  const { language } = useLanguage();
-  const isEn = language === "en";
   const [index, setIndex] = useState(0);
 
   const nextBanner = () => setIndex((prev) => (prev + 1) % banners.length);
@@ -25,12 +19,12 @@ export default function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % banners.length);
-    }, 5000);
+    }, 10000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="relative text-center mb-8 mt-0">
+    <div className="relative text-center mt-0">
       <div className="relative w-screen h-screen overflow-hidden">
         <AnimatePresence initial={false} mode="wait">
           <motion.img
@@ -71,7 +65,6 @@ export default function Hero() {
             />
           ))}
         </div>
-        {/* Overlay for text */}
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/10"></div>
       </div>
     </div>

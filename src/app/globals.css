@@ -7,3 +7,15 @@
     --color-seiza-cuaternario: #8C5A2E;
     --color-seiza-quintario: #F2E9E9;
 }
+
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+}

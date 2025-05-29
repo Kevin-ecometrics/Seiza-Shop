@@ -39,16 +39,9 @@ function Product() {
   const totalPrice = unitPrice * quantity;
 
   const productImages = [
-    "/Seiza_01.jpg",
-    "/Seiza_45_traserag.jpg",
-    "/Seiza_45g.jpg",
-    "/Seiza_45g2.jpg",
-    "/Seiza_frontal.jpg",
-    "/Seiza_inclinadajpg.jpg",
-    "/Seiza_lateral.jpg",
-    "/Seiza_lateral2.jpg",
-    "/Seiza_superior.jpg",
-    "/Seiza_trasera.jpg",
+    "/seiza_banco.png",
+    "/seiza_banco2.png",
+    "/seiza_banco3.png",
   ];
 
   const positions = productImages.map((image, index) => ({
@@ -125,29 +118,25 @@ function Product() {
   };
 
   return (
-    <div className="min-h-screen bg-white p-4">
-      <div className="max-w-7xl mx-auto">
+    <div className="py-16 p-4 bg-[url(/background.webp)] bg-cover bg-center ">
+      <div className="max-w-7xl mx-auto bg-[#EEEEEE] rounded-2xl border-[#8C5A2E] border-4">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Visor del Producto */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
-            className="space-y-6"
+            className="space-y-4 "
           >
             {/* Contenedor de Imagen Principal */}
-            <div className="relative bg-white rounded-3xl p-8 border border-gray-200 shadow-sm">
-              <motion.div
-                className="relative aspect-square overflow-hidden rounded-2xl bg-white"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              >
+            <div className="relative  p-8">
+              <motion.div className="relative aspect-square overflow-hidden rounded-2xl">
                 <AnimatePresence mode="wait">
                   <motion.img
                     key={currentPosition}
                     src={positions[currentPosition].src}
                     alt={positions[currentPosition].alt}
-                    className="w-full h-full object-contain cursor-grab active:cursor-grabbing"
+                    className="w-full h-full bg-[#EEEEEE] rounded-3xl p-8 object-contain cursor-grab active:cursor-grabbing"
                     drag="x"
                     dragConstraints={{ left: 0, right: 0 }}
                     onDragStart={() => setIsDragging(true)}
@@ -209,17 +198,17 @@ function Product() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="bg-white rounded-2xl p-4 border border-gray-200 shadow-sm"
+              className="p-8"
             >
               <div className="grid grid-cols-10 gap-2">
                 {positions.map((position, index) => (
                   <motion.button
                     key={position.id}
                     onClick={() => goToPosition(index)}
-                    className={`aspect-square rounded-lg overflow-hidden border-2 transition-all duration-200 ${
+                    className={`aspect-square rounded-full focus:outline-none overflow-hidden border-2 transition-all duration-200 ${
                       currentPosition === index
-                        ? "border-blue-500 ring-2 ring-blue-200"
-                        : "border-gray-200 hover:border-blue-200"
+                        ? "border-seiza-cuaternario ring-2 ring-seiza-cuaternario/60"
+                        : "border-gray-200 hover:border-seiza-cuaternario/80"
                     }`}
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
@@ -245,11 +234,12 @@ function Product() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="space-y-8"
+            className="space-y-8 relative"
           >
-            <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm">
+            <div className="md:absolute md:left-0 border-r-2 border-[#8C5A2E] border h-full top-6"></div>
+            <div className="p-8">
               <motion.h2
-                className="text-3xl font-bold text-gray-900 mb-4"
+                className="text-3xl font-bold text-[#8C5A2E] mb-12"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
@@ -259,51 +249,70 @@ function Product() {
                   : "Banco ergonómico para postura Seiza"}
               </motion.h2>
 
-              <motion.p
-                className="text-gray-600 text-lg mb-6 leading-relaxed"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.6 }}
-              >
-                {isEn
-                  ? "The Seiza bench is designed to support your meditation practice, allowing you to maintain the Seiza posture comfortably and naturally. Its ergonomic shape reduces pressure on knees and ankles for longer, deeper sessions."
-                  : "El banco Seiza está diseñado para apoyar tu práctica de meditación, permitiéndote mantener la postura Seiza de forma cómoda y natural. Su diseño ergonómico reduce la presión en las rodillas y tobillos, facilitando sesiones más largas y profundas."}
-              </motion.p>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center bg-white p-4">
+                  <span className="text-[#8C5A2E] font-semibold">
+                    {isEn ? "Material:" : "Material:"}
+                  </span>
+                  <span className="text-gray-700">
+                    {isEn ? "High quality wood" : "Madera de alta calidad"}
+                  </span>
+                </div>
 
-              <motion.div
-                className="mb-8"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.7 }}
-              >
-                <span className="text-gray-500 block mb-1 font-medium">
-                  {isEn ? "Price" : "Precio"}
-                </span>
-                <span className="text-3xl font-bold text-gray-900">
+                <div className="flex justify-between items-center bg-[#F2E9E9] p-4">
+                  <span className="text-[#8C5A2E] font-semibold">
+                    {isEn ? "Dimensions:" : "Dimensiones:"}
+                  </span>
+                  <span className="text-gray-700">42 × 18 × 15 cm.</span>
+                </div>
+
+                <div className="flex justify-between items-center bg-white p-4">
+                  <span className="text-[#8C5A2E] font-semibold">
+                    {isEn ? "Weight:" : "Peso:"}
+                  </span>
+                  <span className="text-gray-700">1.1 Kg</span>
+                </div>
+
+                <div className="flex justify-between items-center bg-[#F2E9E9] p-4">
+                  <span className="text-[#8C5A2E] font-semibold">
+                    {isEn ? "In Stock:" : "en Stock:"}
+                  </span>
+                  <span className="text-gray-700">
+                    {stock} {isEn ? "pieces" : "piezas"}
+                  </span>
+                </div>
+              </div>
+
+              <div className="flex mt-8 justify-between items-center bg-[#FFFFFF] p-4 mb-8 text-[#8C5A2E]">
+                <span className="text-3xl font-bold text-[#8C5A2E]">
                   {isEn
                     ? `$${totalPrice.toFixed(2)} USD`
                     : `$${(totalPrice * dolar).toLocaleString("es-MX")} MXN`}
                 </span>
-              </motion.div>
-
-              <div className="flex items-center space-x-4 mb-8">
-                <button
-                  className="px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300 text-gray-700 text-xl font-bold"
-                  onClick={() => handleQuantityChange(-1)}
-                  aria-label={isEn ? "Decrease quantity" : "Disminuir cantidad"}
-                >
-                  -
-                </button>
-                <span className="text-xl font-semibold text-gray-900 min-w-[2rem] text-center">
-                  {quantity}
-                </span>
-                <button
-                  className="px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300 text-gray-700 text-xl font-bold"
-                  onClick={() => handleQuantityChange(1)}
-                  aria-label={isEn ? "Increase quantity" : "Aumentar cantidad"}
-                >
-                  +
-                </button>
+                <div className="flex gap-4 items-center">
+                  <span>{isEn ? "Stock:" : "Cantidad:"}</span>
+                  <button
+                    className="px-4 py-2 rounded-xl bg-[#F2E9E9] hover:bg-[#F2E9E9]/80 cursor-pointer  text-xl font-bold"
+                    onClick={() => handleQuantityChange(-1)}
+                    aria-label={
+                      isEn ? "Decrease quantity" : "Disminuir cantidad"
+                    }
+                  >
+                    -
+                  </button>
+                  <span className="text-xl font-semibold text-gray-900 min-w-[2rem] text-center">
+                    {quantity}
+                  </span>
+                  <button
+                    className="px-4 py-2 rounded-xl bg-[#F2E9E9] hover:bg-[#F2E9E9]/80 cursor-pointer  text-xl font-bold"
+                    onClick={() => handleQuantityChange(1)}
+                    aria-label={
+                      isEn ? "Increase quantity" : "Aumentar cantidad"
+                    }
+                  >
+                    +
+                  </button>
+                </div>
               </div>
 
               {stock !== null && (
@@ -333,7 +342,7 @@ function Product() {
                 className={`w-full flex justify-center items-center gap-2 px-6 py-3 rounded-3xl text-white font-semibold shadow-md transition-colors duration-200 ${
                   quantity === 0 || (stock !== null && quantity > stock)
                     ? "bg-gray-400 cursor-not-allowed"
-                    : "bg-blue-600 hover:bg-blue-700"
+                    : "bg-[#D9ADBD] hover:bg-[#D9ADBD]/80 cursor-pointer"
                 }`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -342,44 +351,6 @@ function Product() {
               >
                 <IoCart size={24} /> {isEn ? "Buy Now" : "Comprar ahora"}
               </motion.button>
-            </div>
-
-            {/* Beneficios y Características */}
-            <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
-                {isEn ? "Benefits & Features" : "Beneficios y Características"}
-              </h3>
-              <ul className="space-y-3">
-                {(isEn
-                  ? [
-                      "Allows comfortable and stable Seiza posture.",
-                      "Reduces pressure on knees and ankles during meditation.",
-                      "Made of strong yet lightweight wood.",
-                      "Smooth finish and rounded edges for comfort.",
-                      "Ideal for both beginners and experienced practitioners.",
-                      "Easy to transport and store.",
-                    ]
-                  : [
-                      "Permite mantener la postura Seiza de manera cómoda y estable.",
-                      "Reduce la presión en rodillas y tobillos durante la meditación.",
-                      "Fabricado en madera resistente y ligera.",
-                      "Acabado suave y bordes redondeados para mayor confort.",
-                      "Ideal para principiantes y practicantes avanzados.",
-                      "Fácil de transportar y almacenar.",
-                    ]
-                ).map((feature, index) => (
-                  <motion.li
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 1 + index * 0.1 }}
-                    className="flex items-center text-gray-600"
-                  >
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                    {feature}
-                  </motion.li>
-                ))}
-              </ul>
             </div>
           </motion.div>
         </div>
