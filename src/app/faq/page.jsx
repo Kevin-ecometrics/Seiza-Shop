@@ -290,7 +290,7 @@ function BlogPage() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         />
         <motion.h1
-          className="absolute bottom-10 left-10 text-[80px] md:text-[150px] text-white font-bold drop-shadow-[4px_4px_8px_rgba(0,0,0,0.8)] [text-shadow:2px_2px_4px_rgba(0,0,0,0.9)] stroke-2 stroke-black"
+          className="absolute bottom-10 left-10 text-[80px] md:text-[120px] text-white font-bold drop-shadow-[4px_4px_8px_rgba(0,0,0,0.8)] [text-shadow:2px_2px_4px_rgba(0,0,0,0.9)] stroke-2 stroke-black"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
@@ -323,6 +323,8 @@ function BlogPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.3 }}
+            id="purchase"
+            className="scroll-mt-20"
           >
             <h1 className="font-bold text-4xl mb-6 text-[#8C5A2E]">
               {isEn ? "Purchases" : "Compras"}
@@ -334,6 +336,8 @@ function BlogPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.4 }}
+            id="shipping"
+            className="scroll-mt-20"
           >
             <h1 className="font-bold text-4xl mb-6 text-[#8C5A2E]">
               {isEn ? "Shipping" : "Envios"}
@@ -345,6 +349,8 @@ function BlogPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.5 }}
+            id="return"
+            className="scroll-mt-20"
           >
             <h1 className="font-bold text-4xl mb-6 text-[#8C5A2E]">
               {isEn ? "Returns" : "Devoluciones"}
@@ -356,6 +362,8 @@ function BlogPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.6 }}
+            id="warranty"
+            className="scroll-mt-20"
           >
             <h1 className="font-bold text-4xl mb-6 text-[#8C5A2E]">
               {isEn ? "Product Warranty" : "Garantía de Producto"}
