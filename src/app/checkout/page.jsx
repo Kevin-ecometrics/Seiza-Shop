@@ -54,7 +54,7 @@ function CheckoutForm({
     if (paymentIntent && paymentIntent.status === "succeeded") {
       // Guardar la compra en backend solo después de pago confirmado
       try {
-        await axios.post("http://localhost:5000/save-order", {
+        await axios.post(`${process.env.NEXT_PUBLIC_URL}save-order`, {
           nombre_completo: nombre,
           email,
           telefono,
@@ -262,7 +262,7 @@ function Page() {
       const amountInCents = Math.round(totalWithShipping * 100);
 
       const res = await axios.post(
-        "http://localhost:5000/create-payment-intent",
+        `${process.env.NEXT_PUBLIC_URL}create-payment-intent`,
         {
           amount: amountInCents,
           currency: isEn ? "usd" : "mxn",

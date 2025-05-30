@@ -1,23 +1,15 @@
 export const SEO = {
-  title: "Contact Seiza Shop – Personalized Support & Assistance",
+  title: "Contact Seiza Shop – Support for Your Seiza Bench Experience",
   description:
-    "Get in touch with Seiza Shop for questions, product inquiries, and personalized support. We are here to assist you with anything you need.",
+    "Have questions about the Seiza Bench? Contact Seiza Shop for personalized support, product details, and assistance. We're here to ensure your satisfaction.",
   openGraph: {
-    title: "Contact Seiza Shop – Personalized Support & Assistance",
+    title: "Contact Seiza Shop – Support for Your Seiza Bench Experience",
     description:
-      "Reach out to Seiza Shop for personalized assistance, support, or product-related questions. We’re here to help you at every step.",
-    url: "http://seiza.shop/contact",
+      "Reach out to Seiza Shop for expert help and product guidance related to your Seiza Bench. We’re dedicated to providing you with personalized assistance.",
+    url: "https://seiza.shop/contact",
     siteName: "Seiza Shop",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Contact Seiza Shop",
-      },
-    ],
   },
   alternates: {
-    canonical: "http://seiza.shop/contact",
+    canonical: "https://seiza.shop/contact",
   },
 };

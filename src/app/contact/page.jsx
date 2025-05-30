@@ -55,7 +55,7 @@ function ContactPage() {
       setLoading(true);
       try {
         const response = await axios.post(
-          "http://localhost:5000/api/send-email",
+          `${process.env.NEXT_PUBLIC_URL}api/send-email`,
           {
             ...formData,
             isEn: isEn,

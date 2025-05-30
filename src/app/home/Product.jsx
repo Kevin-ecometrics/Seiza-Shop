@@ -92,7 +92,7 @@ function Product() {
   useEffect(() => {
     const fetchStock = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/stock");
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}stock`);
         if (Array.isArray(response.data) && response.data.length > 0) {
           setStock(response.data[0].stock);
         } else {

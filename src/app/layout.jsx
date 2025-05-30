@@ -2,47 +2,40 @@ import "./globals.css";
 import { LanguageProvider } from "./context/LanguageContext";
 
 export const metadata = {
-  title: "Seiza Shop - Modern Online Shop for Wellness and Lifestyle",
+  title: "Seiza Bench – Ergonomic Meditation Seat for Proper Seiza Posture",
   description:
-    "Explore top-quality wellness, lifestyle, and home products at Seiza Shop. Enjoy a personalized shopping experience with fast and free shipping.",
+    "Shop the original Seiza Bench – designed for meditation, posture support, and Japanese sitting style. Improve your comfort and wellness with a minimalist ergonomic seat.",
   keywords: [
-    "online Shop",
-    "e-commerce",
-    "products",
-    "online shopping",
-    "free shipping",
-    "seiza Shop",
-    "fashion",
-    "technology",
-    "home",
+    "Seiza bench",
+    "meditation bench",
+    "Japanese posture",
+    "Seiza position",
+    "ergonomic bench",
+    "meditation seat",
+    "yoga bench",
+    "wellness furniture",
+    "mindfulness product",
+    "Seiza chair",
   ],
-  authors: [{ name: "Seiza Shop Team", url: "http://seiza.shop/" }],
+  authors: [{ name: "Seiza Shop Team", url: "https://seiza.shop/" }],
   creator: "Seiza Shop",
   publisher: "Seiza Shop",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "http://seiza.shop/",
-    title: "Seiza Shop - Modern Online Shop for Wellness and Lifestyle",
+    url: "https://seiza.shop/",
+    title: "Seiza Bench – Ergonomic Meditation Seat for Seiza Posture",
     description:
-      "Explore wellness, lifestyle, and home essentials at Seiza Shop. Shop confidently with free shipping, curated collections, and reliable support.",
+      "Discover the Seiza Bench – your ideal seat for meditation and posture. Minimalist, supportive, and crafted for comfort in traditional sitting.",
     siteName: "Seiza Shop",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Seiza Shop - Online Shopping",
-      },
-    ],
   },
   robots: {
     index: true,
     follow: true,
   },
-  category: "e-commerce",
-  classification: "Online Shop",
-  metadataBase: new URL("http://seiza.shop/"),
+  category: "Meditation Product",
+  classification: "Wellness & Lifestyle",
+  metadataBase: new URL("https://seiza.shop/"),
   alternates: {
     canonical: "/",
     languages: {
@@ -52,8 +45,8 @@ export const metadata = {
   },
   icons: {
     icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
 };
 

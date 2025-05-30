@@ -5,50 +5,82 @@
 >
   <!-- Home -->
   <url>
-    <loc>http://seiza.shop/</loc>
+    <loc>https://seiza.shop/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- Blog -->
   <url>
-    <loc>http://seiza.shop/blog</loc>
+    <loc>https://seiza.shop/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
+  <!-- Individual Blog Posts -->
+  <url>
+    <loc>https://seiza.shop/blog/meditation-power-transform-mind-body-emotions</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://seiza.shop/blog/types-of-meditation-find-your-practice</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://seiza.shop/blog/different-postures-your-yoga-pace</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://seiza.shop/blog/seiza-simple-posture-healthy-spine-peaceful-mind</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://seiza.shop/blog/how-to-meditate-starting-from-scratch</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://seiza.shop/blog/meditation-myths-truth-behind-practice</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Contact -->
   <url>
-    <loc>http://seiza.shop/contact</loc>
+    <loc>https://seiza.shop/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <!-- FAQ main page -->
   <url>
-    <loc>http://seiza.shop/faq</loc>
+    <loc>https://seiza.shop/faq</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- FAQ subsections (anchors) -->
   <url>
-    <loc>http://seiza.shop/faq#purchase</loc>
+    <loc>https://seiza.shop/faq#purchase</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://seiza.shop/faq#shipping</loc>
+    <loc>https://seiza.shop/faq#shipping</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://seiza.shop/faq#return</loc>
+    <loc>https://seiza.shop/faq#return</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://seiza.shop/faq#warranty</loc>
+    <loc>https://seiza.shop/faq#warranty</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

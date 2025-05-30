@@ -1,23 +1,15 @@
 export const SEO = {
-  title: "FAQ – Shipping, Purchases & Warranty Policies | Seiza Shop",
+  title: "FAQ – Seiza Bench Orders, Shipping & Warranty | Seiza Shop",
   description:
-    "Find answers to common questions about purchases, shipping, returns, and product warranties at Seiza Shop. Clear and helpful information for every customer.",
+    "Get answers to your questions about ordering the Seiza Bench, shipping details, return policy, and product warranty. Clear information to support your mindful purchase.",
   openGraph: {
-    title: "FAQ – Shipping, Purchases & Warranty Policies | Seiza Shop",
+    title: "FAQ – Seiza Bench Orders, Shipping & Warranty | Seiza Shop",
     description:
-      "Get clear answers about Seiza Shop's purchase, shipping, return, and warranty policies. Your satisfaction and clarity are our priorities.",
-    url: "http://seiza.shop/faq",
+      "Find helpful answers about ordering your Seiza Bench, delivery timelines, returns, and warranty coverage. We’re here to ensure a smooth and transparent experience.",
+    url: "https://seiza.shop/faq",
     siteName: "Seiza Shop",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Seiza FAQ Page",
-      },
-    ],
   },
   alternates: {
-    canonical: "http://seiza.shop/faq",
+    canonical: "https://seiza.shop/faq",
   },
 };
