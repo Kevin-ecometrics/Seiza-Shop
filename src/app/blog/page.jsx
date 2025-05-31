@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Navbar from "../Navbar";
@@ -86,8 +86,11 @@ function BlogPage() {
   const isEn = language === "en";
   const [index, setIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
+    setIsMounted(true);
+
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
@@ -97,6 +100,8 @@ function BlogPage() {
 
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
+
+  if (!isMounted) return null; // evita el render hasta que coincidan cliente y servidor
 
   const cardsPerPage = isMobile
     ? CARDS_PER_PAGE_MOBILE
@@ -125,15 +130,15 @@ function BlogPage() {
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          src="/banner_blog.webp"
-          className="h-screen w-full"
+          src={isMobile ? "/banner_blog_mobile.webp" : "/banner_blog.webp"}
+          className="w-full"
           alt="banner"
         />
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-          className="absolute translate-x-24 inset-0 flex items-center justify-start text-[80px] md:text-[150px] text-[#8C5A2E] font-bold"
+          className="absolute translate-x-24  inset-0 flex items-center justify-start text-[80px] md:text-[150px] text-[#8C5A2E] font-bold"
         >
           {isEn ? "Blog" : "Blog"}
         </motion.h1>
@@ -176,7 +181,7 @@ function BlogPage() {
               className={`grid gap-6 ${
                 isMobile
                   ? "grid-cols-1 w-full max-w-sm"
-                  : "grid-cols-1 md:grid-cols-3 mx-16"
+                  : "grid-cols-1 lg:grid-cols-3 mx-16"
               }`}
             >
               <AnimatePresence mode="wait">

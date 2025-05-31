@@ -11,26 +11,26 @@ function Benefits() {
       <div className="absolute left-0">
         <img src="/mandala.png" alt="" />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 px-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:px-12">
         <div className="z-10">
           {" "}
-          <img src="/seiza_letras.png" alt="" />
-          <img src="/seiza_banco.png" alt="" />
+          <img src="/seiza_letras.png" alt="Seiza" title="Seiza" />
+          <img src="/seiza_banco.png" alt="Banquito" title="Banquito" />
         </div>
         <div>
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-[60px] text-[#1E1E1E] font-bold text-start"
+            className="text-[40px] md:text-[60px] text-[#1E1E1E] font-bold text-start mb-4"
           >
-            {isEn ? "Benefits:" : "Beneficios:"}
+            {isEn ? "Benefits" : "Beneficios"}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-seiza-cuaternario font-normal text-[30px] text-balance text-start mb-8"
+            className="text-seiza-cuaternario font-normal text-[20px] md:text-[30px] text-balance text-start mb-8"
           >
             <strong>
               {isEn ? "Meditation bench" : "Banco para meditación"}:
@@ -44,7 +44,7 @@ function Benefits() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-seiza-cuaternario font-normal text-[30px] text-balance text-start mb-8"
+            className="text-seiza-cuaternario font-normal text-[20px] md:text-[30px] text-balance text-start mb-8"
           >
             <strong>
               {isEn ? "Effortless comfort" : "Comodidad sin esfuerzo"}:
@@ -58,7 +58,7 @@ function Benefits() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-seiza-cuaternario font-normal text-[30px] text-balance text-start mb-8"
+            className="text-seiza-cuaternario font-normal text-[20px] md:text-[30px] text-balance text-start mb-8"
           >
             <strong>
               {isEn ? "Improved circulation" : "Mejor circulación"}:
@@ -72,7 +72,7 @@ function Benefits() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-seiza-cuaternario font-normal text-[30px] text-balance text-start mb-8"
+            className="text-seiza-cuaternario font-normal text-[20px] md:text-[30px] text-balance text-start mb-8"
           >
             <strong>{isEn ? "Deep breathing" : "Respiración profunda"}:</strong>{" "}
             {isEn

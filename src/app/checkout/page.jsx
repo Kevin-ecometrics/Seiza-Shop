@@ -441,7 +441,7 @@ function Page() {
           </div>
 
           {/* Formulario */}
-          <div className="flex-1 max-w-md mx-auto">
+          <div className="flex-1 md:max-w-md md:mx-auto">
             <h2 className="text-xl font-bold text-gray-800 mb-4">
               {isEn ? "Contact Information" : "Información de contacto"}
             </h2>

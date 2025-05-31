@@ -5,15 +5,19 @@ import Navbar from "./Navbar";
 import Benefits from "./home/Benefits";
 import Footer from "./Footer";
 import UseMode from "./home/UseMode";
+import ProductPackages from "./home/ProductPackages";
+import Testimonials from "./home/Testimonials";
 
 function page() {
   return (
     <div>
       <Navbar />
       <Hero />
-      <About />
       <UseMode />
+      <About />
       <Benefits />
+      <ProductPackages />
+      <Testimonials />
       <Product />
       <Footer />
     </div>

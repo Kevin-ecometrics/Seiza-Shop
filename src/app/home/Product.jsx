@@ -283,13 +283,13 @@ function Product() {
                 </div>
               </div>
 
-              <div className="flex mt-8 justify-between items-center bg-[#FFFFFF] p-4 mb-8 text-[#8C5A2E]">
+              <div className="flex flex-col md:flex-row mt-8 justify-between items-center bg-[#FFFFFF] p-4 mb-8 text-[#8C5A2E]">
                 <span className="text-3xl font-bold text-[#8C5A2E]">
                   {isEn
                     ? `$${totalPrice.toFixed(2)} USD`
                     : `$${(totalPrice * dolar).toLocaleString("es-MX")} MXN`}
                 </span>
-                <div className="flex gap-4 items-center">
+                <div className="flex gap-4 items-center mt-4 md:mt-0">
                   <span>{isEn ? "Stock:" : "Cantidad:"}</span>
                   <button
                     className="px-4 py-2 rounded-xl bg-[#F2E9E9] hover:bg-[#F2E9E9]/80 cursor-pointer  text-xl font-bold"
@@ -300,7 +300,7 @@ function Product() {
                   >
                     -
                   </button>
-                  <span className="text-xl font-semibold text-gray-900 min-w-[2rem] text-center">
+                  <span className="text-xl font-semibold text-[#8C5A2E] min-w-[2rem] text-center">
                     {quantity}
                   </span>
                   <button
@@ -317,7 +317,7 @@ function Product() {
 
               {stock !== null && (
                 <motion.p
-                  className={`mb-6 ${
+                  className={`mb-6 font-bold md:text-2xl text-xl ${
                     quantity > stock ? "text-red-600" : "text-gray-600"
                   }`}
                   initial={{ opacity: 0 }}

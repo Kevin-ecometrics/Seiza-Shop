@@ -39,7 +39,7 @@ function UseMode() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="text-[50px] md:text-[60px] text-[#1E1E1E] font-bold text-center md:text-start mb-12 md:px-16"
+          className="text-[40px] md:text-[60px] text-[#1E1E1E] font-bold text-center md:text-start mb-12 md:px-16"
         >
           {isEn ? "How to Use" : "Modo de Uso"}
         </motion.h1>

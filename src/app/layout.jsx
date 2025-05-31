@@ -1,5 +1,5 @@
 import "./globals.css";
-import { LanguageProvider } from "./context/LanguageContext";
+import { LanguageProvider } from "@context/LanguageContext";
 
 export const metadata = {
   title: "Seiza Bench – Ergonomic Meditation Seat for Proper Seiza Posture",
@@ -52,8 +52,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className="overflow-x-hidden">
+    <html>
+      <body>
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>

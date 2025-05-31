@@ -282,15 +282,15 @@ function BlogPage() {
 
       <section className="relative">
         <motion.img
-          src="/3. Banners SEIZA.webp"
-          className="h-screen w-full object-cover"
+          src="/banner_faq.webp"
+          className="md:h-auto h-screen w-full object-cover"
           alt="banner"
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         />
         <motion.h1
-          className="absolute bottom-10 left-10 text-[80px] md:text-[120px] text-white font-bold drop-shadow-[4px_4px_8px_rgba(0,0,0,0.8)] [text-shadow:2px_2px_4px_rgba(0,0,0,0.9)] stroke-2 stroke-black"
+          className="absolute bottom-10 left-10 text-[50px] md:text-[120px] text-white font-bold drop-shadow-[4px_4px_8px_rgba(0,0,0,0.8)] [text-shadow:2px_2px_4px_rgba(0,0,0,0.9)] stroke-2 stroke-black"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
@@ -301,14 +301,14 @@ function BlogPage() {
 
       <section className="bg-[url(/background.webp)] bg-cover bg-center">
         <motion.div
-          className="px-14 py-16"
+          className="md:px-14 px-6 py-16"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
           {!isEn && (
             <motion.p
-              className="text-[30px] text-black text-justify mb-8"
+              className="text-[30px] text-black mb-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}

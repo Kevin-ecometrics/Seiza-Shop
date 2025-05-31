@@ -113,7 +113,16 @@ function ContactPage() {
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="h-screen w-full object-cover"
+          className="hidden md:block"
+          alt="contact"
+        />
+
+        <motion.img
+          src="/banner_contact_mobile.webp"
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="block md:hidden"
           alt="contact"
         />
         <motion.h1

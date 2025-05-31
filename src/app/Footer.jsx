@@ -64,7 +64,7 @@ function Footer() {
       <div className="border-t-2 border-[#8C5A2E] w-[95%] mx-auto absolute top-0 left-0 right-0"></div>
 
       {/* Contenedor principal en columna en mobile */}
-      <div className="flex flex-col items-center md:flex-row md:justify-between gap-12">
+      <div className="flex flex-col md:items-center md:flex-row md:justify-between gap-12">
         {/* Logo */}
         <div className="flex-shrink-0">
           <img
@@ -75,7 +75,7 @@ function Footer() {
         </div>
 
         {/* Bloques de links en columna en mobile */}
-        <div className="flex flex-col md:grid md:grid-cols-2 gap-8 text-center md:text-left text-sm md:text-base">
+        <div className="flex flex-col   md:grid md:grid-cols-2 gap-8 md:text-center text-left text-lg  ">
           {/* Bloque 1: Enlaces hacia secciones dentro de /faq */}
           <ul className="space-y-2">
             <li>
@@ -103,7 +103,7 @@ function Footer() {
           </ul>
 
           {/* Bloque 2 */}
-          <div className="relative md:pl-4">
+          <div className="relative text-lg md:pl-4">
             <div className="hidden md:block absolute left-0 top-0 bottom-0 w-[2px] bg-seiza-cuaternario rounded-full" />
             <ul className="space-y-2">
               <li>
@@ -134,10 +134,10 @@ function Footer() {
 
       {isBlogPath && (
         <div className="mt-6 border-t border-[#8C5A2E] pt-4">
-          <h3 className="font-normal mb-2 text-center text-xl md:text-3xl text-black">
+          <h3 className=" mb-2 md:text-center text-lg text-black font-bold">
             {isEn ? "Blog Posts" : "Artículos del Blog"}
           </h3>
-          <ul className="gap-4 text-center text-lg grid grid-cols-1 xl:grid-cols-3">
+          <ul className="gap-4 font-bold md:text-center text-lg grid grid-cols-1 xl:grid-cols-3">
             {blogLinks.map(({ url, title }) => (
               <li key={url}>
                 <Link
