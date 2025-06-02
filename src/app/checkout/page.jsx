@@ -87,7 +87,7 @@ function CheckoutForm({
       <button
         type="submit"
         disabled={!stripe || isProcessing}
-        className="w-full flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg mt-4 text-lg shadow transition disabled:opacity-60"
+        className="w-full flex items-center justify-center bg-[#8C5A2E] hover:bg-[#8C5A2E]/90 text-white font-bold py-3 rounded-lg mt-4 text-lg shadow transition disabled:opacity-60"
       >
         {isProcessing && (
           <svg
@@ -125,8 +125,6 @@ function Page() {
       setDolar(dolarValue);
     }
   }, []);
-
-  const exchangeRate = dolar;
 
   const { language } = useLanguage();
   const isEn = language === "en";
@@ -342,23 +340,15 @@ function Page() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-10 px-2">
-      <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg border border-gray-100">
-        <div className="px-8 py-8 border-b">
-          <h1 className="text-3xl font-extrabold text-gray-900 mb-2 tracking-tight">
+    <div className="min-h-screen py-10 px-2 bg-[url(/background.webp)] bg-cover bg-center ">
+      <div className="max-w-4xl mx-auto rounded-2xl">
+        <div className="px-8 py-8">
+          <h1 className="text-5xl font-extrabold text-[#8C5A2E] mb-2 tracking-tight">
             {isEn ? "Checkout" : "Checkout"}
           </h1>
-          <p className="text-gray-500 text-base">
-            {isEn
-              ? "Review your order and complete your details to finish the purchase."
-              : "Revisa tu pedido y completa tus datos para finalizar la compra."}{" "}
-          </p>
         </div>
         <div className="flex flex-col md:flex-row gap-8 px-8 py-8">
           <div className="flex-1">
-            <h2 className="text-xl font-bold text-gray-800 mb-4">
-              {isEn ? "Your cart" : "Tu carrito"}
-            </h2>
             {cart.length === 0 ? (
               <div className="text-gray-500 text-center py-12 text-lg">
                 {isEn
@@ -366,44 +356,26 @@ function Page() {
                   : "No hay productos en el carrito."}
               </div>
             ) : (
-              <ul className="space-y-6">
+              <ul>
                 {cart.map((item) => (
                   <li
                     key={item.id}
-                    className="flex items-center gap-4 border-b pb-4 last:border-b-0"
+                    className="flex flex-col items-start gap-4 "
                   >
                     <img
                       src={item.src}
                       alt={item.alt}
-                      className="w-20 h-20 object-contain rounded-lg border bg-white"
+                      className="object-contain rounded-lg border-2 border-[#8C5A2E]"
                     />
-                    <div className="flex-1">
-                      <div className="font-semibold text-gray-900 text-base">
+                    <div className="flex flex-col">
+                      <div className="font-semibold text-gray-900 text-xl mb-4">
                         {item.alt}
                       </div>
-                      <div className="text-sm text-gray-500">
+                      <div className="text-lg text-gray-500">
                         {isEn ? "Quantity" : "Cantidad"}:{" "}
-                        <span className="font-bold text-gray-700">
+                        <span className="font-bold text-gray-700 text-xl">
                           {item.quantity}
                         </span>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-lg font-bold text-blue-700">
-                        {total?.toLocaleString(isEn ? "en-US" : "es-MX", {
-                          style: "currency",
-                          currency: isEn ? "USD" : "MXN",
-                        })}{" "}
-                      </div>
-                      <div className="text-xs text-gray-400">
-                        c/u{" "}
-                        {(isEn
-                          ? item.price
-                          : item.price * exchangeRate
-                        )?.toLocaleString(isEn ? "en-US" : "es-MX", {
-                          style: "currency",
-                          currency: isEn ? "USD" : "MXN",
-                        })}
                       </div>
                     </div>
                   </li>
@@ -411,28 +383,29 @@ function Page() {
               </ul>
             )}
             {cart.length > 0 && (
-              <div className="mt-8 border-t pt-6">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-gray-700 font-medium">
+              <div className="py-4 text-[#8C5A2E]">
+                <div className="flex justify-between items-center bg-white rounded-3xl px-2 py-2  mb-2">
+                  <span className="font-medium">
                     {isEn ? "Subtotal" : "Subtotal"}
                   </span>
-                  <span className="text-gray-900 font-bold text-lg">
+                  <span className=" font-bold text-lg">
                     ${total.toLocaleString("es-MX")}
                   </span>
                 </div>
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-gray-500 text-sm">
+                <div className="flex justify-between items-center mb-2 bg-white rounded-3xl px-2 py-2 ">
+                  <span className=" text-sm">
                     {isEn ? "Shipping" : "Envío"}
                   </span>
-                  <span className="text-gray-500 text-sm">
+                  <span className=" text-sm">
                     ${shipping.toLocaleString("es-MX")}
                   </span>
                 </div>
-                <div className="flex justify-between items-center border-t pt-4 mt-4">
-                  <span className="text-xl font-bold text-gray-900">
+                <div className="w-full bg-[#8C5A2E] h-0.5 mb-4 mt-4"></div>
+                <div className="flex justify-between items-center bg-white rounded-3xl px-2 py-2 ">
+                  <span className="text-xl font-bold ">
                     {isEn ? "Total" : "Total"}
                   </span>
-                  <span className="text-2xl font-extrabold text-blue-700">
+                  <span className="text-2xl font-extrabold ">
                     ${totalWithShipping.toLocaleString("es-MX")}
                   </span>
                 </div>
@@ -442,29 +415,57 @@ function Page() {
 
           {/* Formulario */}
           <div className="flex-1 md:max-w-md md:mx-auto">
-            <h2 className="text-xl font-bold text-gray-800 mb-4">
+            <h2 className="text-2xl font-bold text-[#3B3631] mb-4">
               {isEn ? "Contact Information" : "Información de contacto"}
             </h2>
 
             {/* Si ya tenemos clientSecret mostramos el modal de Stripe */}
             {clientSecret ? (
-              <Elements stripe={stripePromise} options={{ clientSecret }}>
-                <CheckoutForm
-                  onSuccess={onPaymentSuccess}
-                  nombre={nombre}
-                  email={email}
-                  telefono={telefono}
-                  direccion={{
-                    calle: direccion_calle,
-                    numero: direccion_numero,
-                    colonia: direccion_colonia,
-                    ciudad: direccion_ciudad,
-                    estado: direccion_estado,
-                    cp: direccion_cp,
-                  }}
-                  cantidad_comprada={cantidad_comprada}
-                />{" "}
-              </Elements>
+              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80">
+                <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md md:max-w-xl relative">
+                  <button
+                    onClick={() => {
+                      setClientSecret("");
+                      setIsSubmitting(false);
+                    }}
+                    className="absolute top-2 right-3 text-gray-400 hover:text-gray-700 text-2xl font-bold"
+                    aria-label={
+                      isEn ? "Close payment modal" : "Cerrar modal de pago"
+                    }
+                  >
+                    &times;
+                  </button>
+                  <Elements
+                    stripe={stripePromise}
+                    options={{
+                      clientSecret,
+                      appearance: {
+                        theme: "stripe",
+                        variables: {
+                          colorPrimary: "#8C5A2E",
+                          colorBackground: "#fff",
+                        },
+                      },
+                    }}
+                  >
+                    <CheckoutForm
+                      onSuccess={onPaymentSuccess}
+                      nombre={nombre}
+                      email={email}
+                      telefono={telefono}
+                      direccion={{
+                        calle: direccion_calle,
+                        numero: direccion_numero,
+                        colonia: direccion_colonia,
+                        ciudad: direccion_ciudad,
+                        estado: direccion_estado,
+                        cp: direccion_cp,
+                      }}
+                      cantidad_comprada={cantidad_comprada}
+                    />{" "}
+                  </Elements>
+                </div>
+              </div>
             ) : (
               <form
                 className="space-y-4"
@@ -481,8 +482,8 @@ function Page() {
                     className={`w-full border ${
                       fieldErrors.nombre
                         ? "border-red-400 ring-2 ring-red-200"
-                        : "border-gray-300"
-                    } rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200`}
+                        : "border-[#8C5A2E] bg-white text-[#8C5A2E]"
+                    } rounded-lg px-4 py-2 focus:outline-none `}
                     required
                     autoComplete="name"
                   />
@@ -502,8 +503,8 @@ function Page() {
                     className={`w-full border ${
                       fieldErrors.email
                         ? "border-red-400 ring-2 ring-red-200"
-                        : "border-gray-300"
-                    } rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200`}
+                        : "border-[#8C5A2E] bg-white text-[#8C5A2E]"
+                    } rounded-lg px-4 py-2 focus:outline-none `}
                     required
                     autoComplete="email"
                   />
@@ -523,8 +524,8 @@ function Page() {
                     className={`w-full border ${
                       fieldErrors.telefono
                         ? "border-red-400 ring-2 ring-red-200"
-                        : "border-gray-300"
-                    } rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200`}
+                        : "border-[#8C5A2E] bg-white text-[#8C5A2E]"
+                    } rounded-lg px-4 py-2 focus:outline-none `}
                     required
                     autoComplete="tel"
                     maxLength={10}
@@ -548,8 +549,8 @@ function Page() {
                     className={`w-full border ${
                       fieldErrors.direccion_calle
                         ? "border-red-400 ring-2 ring-red-200"
-                        : "border-gray-300"
-                    } rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200`}
+                        : "border-[#8C5A2E] bg-white text-[#8C5A2E]"
+                    } rounded-lg px-4 py-2 focus:outline-none `}
                     required
                     autoComplete="street-address"
                   />
@@ -572,8 +573,8 @@ function Page() {
                     className={`w-full border ${
                       fieldErrors.direccion_numero
                         ? "border-red-400 ring-2 ring-red-200"
-                        : "border-gray-300"
-                    } rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200`}
+                        : "border-[#8C5A2E] bg-white text-[#8C5A2E]"
+                    } rounded-lg px-4 py-2 focus:outline-none `}
                     required
                     autoComplete="address-line2"
                   />
@@ -596,8 +597,8 @@ function Page() {
                     className={`w-full border ${
                       fieldErrors.direccion_colonia
                         ? "border-red-400 ring-2 ring-red-200"
-                        : "border-gray-300"
-                    } rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200`}
+                        : "border-[#8C5A2E] bg-white text-[#8C5A2E]"
+                    } rounded-lg px-4 py-2 focus:outline-none `}
                     required
                     autoComplete="address-level2"
                   />
@@ -620,8 +621,8 @@ function Page() {
                     className={`w-full border ${
                       fieldErrors.direccion_ciudad
                         ? "border-red-400 ring-2 ring-red-200"
-                        : "border-gray-300"
-                    } rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200`}
+                        : "border-[#8C5A2E] bg-white text-[#8C5A2E]"
+                    } rounded-lg px-4 py-2 focus:outline-none `}
                     required
                     autoComplete="address-level1"
                   />
@@ -644,8 +645,8 @@ function Page() {
                     className={`w-full border ${
                       fieldErrors.direccion_estado
                         ? "border-red-400 ring-2 ring-red-200"
-                        : "border-gray-300"
-                    } rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200`}
+                        : "border-[#8C5A2E] bg-white text-[#8C5A2E]"
+                    } rounded-lg px-4 py-2 focus:outline-none `}
                     required
                     autoComplete="address-level1"
                   />
@@ -665,8 +666,8 @@ function Page() {
                     className={`w-full border ${
                       fieldErrors.direccion_cp
                         ? "border-red-400 ring-2 ring-red-200"
-                        : "border-gray-300"
-                    } rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200`}
+                        : "border-[#8C5A2E] bg-white text-[#8C5A2E]"
+                    } rounded-lg px-4 py-2 focus:outline-none `}
                     required
                     maxLength={5}
                     autoComplete="postal-code"
@@ -681,7 +682,7 @@ function Page() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg mt-4 text-lg shadow transition disabled:opacity-60"
+                  className="w-full flex items-center justify-center bg-[#8C5A2E] hover:bg-[#8C5A2E]/90 cursor-pointer text-white font-bold py-3 rounded-lg mt-4 text-lg shadow transition disabled:opacity-60"
                 >
                   {isSubmitting && (
                     <svg
