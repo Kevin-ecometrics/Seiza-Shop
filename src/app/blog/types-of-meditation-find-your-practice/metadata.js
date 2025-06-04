@@ -6,10 +6,10 @@ export const SEO = {
     title: "Types of Meditation: Find the Practice That Resonates With You",
     description:
       "Explore various meditation styles that help you disconnect from the noise and find inner peace. Choose the one that fits your lifestyle.",
-    url: "https://seiza.shop/blog/types-of-meditation",
+    url: "https://seiza.shop/blog/types-of-meditation-find-your-practice",
     siteName: "Seiza Shop",
   },
   alternates: {
-    canonical: "https://seiza.shop/blog/types-of-meditation",
+    canonical: "https://seiza.shop/blog/types-of-meditation-find-your-practice",
   },
 };

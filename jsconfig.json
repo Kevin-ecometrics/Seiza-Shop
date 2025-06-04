@@ -7,7 +7,7 @@
       "@assets/*": ["./src/assets/*"],
       "@styles/*": ["./src/styles/*"],
       "@hooks/*": ["./src/hooks/*"],
-      "@context/*": ["./src/app/context/*"]
+      "@context/*": ["./src/app/context/*"],
     }
   }
 }

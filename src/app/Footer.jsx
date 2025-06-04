@@ -6,42 +6,60 @@ import { usePathname } from "next/navigation";
 
 const blogLinks = [
   {
-    url: "/blog/meditation-power-transform-mind-body-emotions",
+    url: {
+      en: "/blog/meditation-power-transform-mind-body-emotions",
+      es: "/blog/meditacion-poder-transformar-mente-cuerpo-emociones",
+    },
     title: {
       en: "Meditation: The Power to Transform Your Mind, Body, and Emotions",
       es: "Meditación: El Poder de Transformar tu Mente, Cuerpo y Emociones",
     },
   },
   {
-    url: "/blog/types-of-meditation-find-your-practice",
+    url: {
+      en: "/blog/types-of-meditation-find-your-practice",
+      es: "/blog/tipos-de-meditacion-encuentra-tu-practica",
+    },
     title: {
       en: "Types of Meditation: Find the Practice That Resonates With You",
       es: "Tipos de Meditación: Encuentra la Práctica que Resuena Contigo",
     },
   },
   {
-    url: "/blog/different-postures-your-yoga-pace",
+    url: {
+      en: "/blog/different-postures-your-yoga-pace",
+      es: "/blog/diferentes-posturas-tu-yoga-tu-ritmo",
+    },
     title: {
       en: "Different Postures: Your Yoga, Your Pace",
       es: "Diferentes Posturas: Tu Yoga, Tu Ritmo",
     },
   },
   {
-    url: "/blog/seiza-simple-posture-healthy-spine-peaceful-mind",
+    url: {
+      en: "/blog/seiza-simple-posture-healthy-spine-peaceful-mind",
+      es: "/blog/seiza-simple-postura-columna-sana-mente-en-paz",
+    },
     title: {
       en: "Seiza: A Simple Posture for a Healthy Spine and a Peaceful Mind",
       es: "Seiza: Una Simple Postura para una Columna Sana y una Mente en Paz",
     },
   },
   {
-    url: "/blog/how-to-meditate-starting-from-scratch",
+    url: {
+      en: "/blog/how-to-meditate-starting-from-scratch",
+      es: "/blog/como-meditar-empezar-desde-cero",
+    },
     title: {
       en: "How to Meditate: Starting from Scratch",
       es: "Cómo Meditar: Empezar desde cero",
     },
   },
   {
-    url: "/blog/meditation-myths-truth-behind-practice",
+    url: {
+      en: "/blog/meditation-myths-truth-behind-practice",
+      es: "/blog/mitos-sobre-la-meditacion-verdad-detras-de-practica",
+    },
     title: {
       en: "Meditation Myths: Discovering the Truth Behind the Practice",
       es: "Mitos sobre la meditación: Descubriendo la verdad detrás de la práctica",
@@ -139,9 +157,9 @@ function Footer() {
           </h3>
           <ul className="gap-4 font-bold md:text-center text-lg grid grid-cols-1 xl:grid-cols-3">
             {blogLinks.map(({ url, title }) => (
-              <li key={url}>
+              <li key={isEn ? url.en : url.es}>
                 <Link
-                  href={url}
+                  href={isEn ? url.en : url.es}
                   className="hover:underline text-sm md:text-base"
                 >
                   {isEn ? title.en : title.es}

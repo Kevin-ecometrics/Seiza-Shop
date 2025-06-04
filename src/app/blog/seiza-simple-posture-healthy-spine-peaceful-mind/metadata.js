@@ -6,10 +6,11 @@ export const SEO = {
     title: "Seiza: A Simple Posture for a Healthy Spine and a Peaceful Mind",
     description:
       "Explore the traditional Japanese seiza posture and its benefits for spine health and mental peace.",
-    url: "https//seiza.shop/blog/seiza-posture",
+    url: "https//seiza.shop/blog/seiza-simple-posture-healthy-spine-peaceful-mind",
     siteName: "Seiza Shop",
   },
   alternates: {
-    canonical: "https://seiza.shop/blog/seiza-posture",
+    canonical:
+      "https://seiza.shop/blog/seiza-simple-posture-healthy-spine-peaceful-mind",
   },
 };

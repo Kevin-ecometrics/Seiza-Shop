@@ -6,10 +6,10 @@ export const SEO = {
     title: "Meditation Myths: Discovering the Truth Behind the Practice",
     description:
       "Separate fact from fiction in meditation practice. Learn the true benefits beyond mystical expectations.",
-    url: "https://seiza.shop/blog/meditation-myths",
+    url: "https://seiza.shop/blog/meditation-myths-truth-behind-practice",
     siteName: "Seiza Shop",
   },
   alternates: {
-    canonical: "https://seiza.shop/blog/meditation-myths",
+    canonical: "https://seiza.shop/blog/meditation-myths-truth-behind-practice",
   },
 };

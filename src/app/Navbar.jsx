@@ -115,7 +115,25 @@ function Navbar() {
           <div className="ml-4">
             <select
               value={language || ""}
-              onChange={(e) => changeLanguage(e.target.value)}
+              onChange={(e) => {
+                const newLang = e.target.value;
+                const currentPath = pathname;
+
+                if (currentPath.startsWith("/blog/")) {
+                  const slug = currentPath.split("/")[2];
+                  const { blogSlugMap } = require("./utils/blogSlugMap");
+
+                  const translatedSlug = blogSlugMap[slug];
+                  if (translatedSlug) {
+                    const newPath = `/blog/${translatedSlug}`;
+                    changeLanguage(newLang);
+                    window.location.href = newPath;
+                    return;
+                  }
+                }
+
+                changeLanguage(newLang);
+              }}
               className={selectClass}
             >
               <option value="" disabled>
