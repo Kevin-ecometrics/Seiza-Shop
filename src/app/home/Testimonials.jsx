@@ -45,35 +45,23 @@ function Testimonials() {
       comment: isEn
         ? "It's very comfortable to use. It's made of very good material. It was a better product than I imagined from the photos."
         : "Es muy cómodo utilizarlo. Está hecho de muy buen material. Fue un mejor producto de lo que me imaginé en las fotos.",
-      imageUrl:
-        "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80",
+      imageUrl: "/testimonial_1.png",
     },
     {
-      name: "Carlos Mendoza",
-      rating: 5,
+      name: "Luis Fernández",
+      rating: 3,
       comment: isEn
-        ? "Excellent quality and service. It exceeded all my expectations. I completely recommend it."
-        : "Excelente calidad y servicio. Superó todas mis expectativas. Lo recomiendo completamente.",
-      imageUrl:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&h=687",
+        ? "It's a good product. It will help me with my purpose. Thank you."
+        : "Es un buen producto. Me va a ayudar a mi propósito. Gracias.",
+      imageUrl: "/testimonial_2.png",
     },
     {
-      name: "María González",
-      rating: 4.5,
+      name: "Patricia Torres",
+      rating: 4,
       comment: isEn
-        ? "Very satisfied with my purchase. The product arrived quickly and in perfect condition."
-        : "Muy satisfecha con mi compra. El producto llegó rápido y en perfectas condiciones.",
-      imageUrl:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&h=687",
-    },
-    {
-      name: "Roberto Silva",
-      rating: 5,
-      comment: isEn
-        ? "Incredible customer service and top quality product. I will definitely buy again."
-        : "Increíble atención al cliente y producto de primera calidad. Definitivamente volveré a comprar.",
-      imageUrl:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&h=687",
+        ? "Excellent quality. I would recommend including some tips or a manual for the correct posture."
+        : "Excelente calidad, recomendaría tener unos tips o manual de uso para la postura correcta.",
+      imageUrl: "/testimonial_3.png",
     },
   ];
 
@@ -84,7 +72,7 @@ function Testimonials() {
       setCurrentIndex((prevIndex) =>
         prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
       );
-    }, 5000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, [testimonials.length]);
@@ -148,7 +136,7 @@ function Testimonials() {
                   {/* Outer frame */}
                   <div className="w-80 h-96 bg-[#DED3D3] border-4 border-[#8C5A2E] rounded-lg p-4">
                     {/* Inner frame */}
-                    <div className="w-full h-full border-4 border-[#8C5A2E] rounded-lg overflow-hidden bg-[#DED3D3] relative transform translate-x-2">
+                    <div className="w-full h-full border-5 border-[#8C5A2E]  overflow-hidden bg-[#DED3D3] relative transform translate-x-2">
                       {currentTestimonial.imageUrl ? (
                         <img
                           src={currentTestimonial.imageUrl}
@@ -248,7 +236,7 @@ function Testimonials() {
                 {/* Outer frame */}
                 <div className="w-[512px] h-[630px] bg-[#DED3D3] border-4 border-[#8C5A2E] rounded-lg p-6">
                   {/* Inner frame */}
-                  <div className="w-full h-full border-4 border-[#8C5A2E] rounded-lg overflow-hidden bg-[#DED3D3] shadow-lg transform translate-x-2">
+                  <div className="w-full h-full border-4 border-[#8C5A2E] overflow-hidden bg-[#DED3D3] shadow-lg transform translate-x-2">
                     {currentTestimonial.imageUrl ? (
                       <img
                         src={currentTestimonial.imageUrl}
