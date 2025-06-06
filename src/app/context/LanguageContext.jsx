@@ -11,12 +11,16 @@ export const LanguageProvider = ({ children }) => {
     const storedLang = localStorage.getItem("language");
     if (storedLang) {
       setLanguage(storedLang);
+      document.documentElement.lang = storedLang;
+    } else {
+      document.documentElement.lang = "en";
     }
   }, []);
 
   const changeLanguage = (lang) => {
     setLanguage(lang);
     localStorage.setItem("language", lang);
+    document.documentElement.lang = lang;
   };
 
   return (

@@ -228,7 +228,7 @@ function Testimonials() {
                 {/* Outer frame */}
                 <div className="w-[512px] h-[630px] bg-[#DED3D3] border-4 border-[#8C5A2E] rounded-lg p-6">
                   {/* Inner frame */}
-                  <div className="w-full h-full border-10 border-[#8C5A2E] overflow-hidden bg-[#DED3D3] shadow-lg transform translate-x-2">
+                  <div className="w-full h-full border-4 border-[#8C5A2E] overflow-hidden bg-[#DED3D3] shadow-lg transform">
                     {currentTestimonial.imageUrl ? (
                       <img
                         src={currentTestimonial.imageUrl}
