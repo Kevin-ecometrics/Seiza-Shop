@@ -9,13 +9,31 @@ function About() {
   return (
     <div className="bg-[url(/background.webp)] bg-cover bg-center relative py-12 px-4 flex md:justify-start justify-center items-center flex-col">
       <div className="grid grid-cols-1 md:grid-cols-3 md:px-8 gap-12">
-        <div className="bg-[#D9D9D9] h-full w-auto"></div>
+        <div>
+          <motion.img
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            src="/about.webp"
+            className="rounded-3xl"
+            alt={
+              isEn
+                ? "Meditate and protect with Seiza"
+                : "Meditar y protegerse con Seiza"
+            }
+            title={
+              isEn
+                ? "Meditate and protect with Seiza"
+                : "Meditar y protegerse con Seiza"
+            }
+          />
+        </div>
         <div className="col-span-2">
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="md:text-[60px] text-[40px] text-[#1E1E1E] font-bold text-start"
+            className="md:text-[50px] text-[40px] text-[#1E1E1E] font-bold text-start"
           >
             {isEn
               ? "Meditate and protect your body!"
@@ -25,7 +43,7 @@ function About() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-seiza-cuaternario font-normal text-[25px] md:text-[35px] text-balance text-start mb-8"
+            className="text-seiza-cuaternario font-normal text-[20px] md:text-[30px] text-balance text-start mb-8"
           >
             {isEn
               ? "Its solid natural wood structure makes it a fundamental piece in any meditation space. Each bench is handcrafted with dedication, built to support you for many years."
@@ -36,7 +54,7 @@ function About() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-seiza-cuaternario font-normal text-[25px] md:text-[35px] text-balance text-start"
+              className="text-seiza-cuaternario font-normal text-[20px] md:text-[30px] text-balance text-start"
             >
               {isEn
                 ? "Thoughtfully designed to support your meditation practice, it allows you to hold the Seiza posture comfortably and naturally. Its ergonomic form relieves pressure on your knees and ankles, encouraging longer and deeper sessions."

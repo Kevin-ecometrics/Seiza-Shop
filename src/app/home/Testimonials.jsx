@@ -45,23 +45,15 @@ function Testimonials() {
       comment: isEn
         ? "It's very comfortable to use. It's made of very good material. It was a better product than I imagined from the photos."
         : "Es muy cómodo utilizarlo. Está hecho de muy buen material. Fue un mejor producto de lo que me imaginé en las fotos.",
-      imageUrl: "/testimonial_1.png",
+      imageUrl: "/testimonial_1.webp",
     },
     {
       name: "Luis Fernández",
-      rating: 3,
+      rating: 5,
       comment: isEn
         ? "It's a good product. It will help me with my purpose. Thank you."
         : "Es un buen producto. Me va a ayudar a mi propósito. Gracias.",
-      imageUrl: "/testimonial_2.png",
-    },
-    {
-      name: "Patricia Torres",
-      rating: 4,
-      comment: isEn
-        ? "Excellent quality. I would recommend including some tips or a manual for the correct posture."
-        : "Excelente calidad, recomendaría tener unos tips o manual de uso para la postura correcta.",
-      imageUrl: "/testimonial_3.png",
+      imageUrl: "/testimonial_2.webp",
     },
   ];
 
@@ -236,7 +228,7 @@ function Testimonials() {
                 {/* Outer frame */}
                 <div className="w-[512px] h-[630px] bg-[#DED3D3] border-4 border-[#8C5A2E] rounded-lg p-6">
                   {/* Inner frame */}
-                  <div className="w-full h-full border-4 border-[#8C5A2E] overflow-hidden bg-[#DED3D3] shadow-lg transform translate-x-2">
+                  <div className="w-full h-full border-10 border-[#8C5A2E] overflow-hidden bg-[#DED3D3] shadow-lg transform translate-x-2">
                     {currentTestimonial.imageUrl ? (
                       <img
                         src={currentTestimonial.imageUrl}

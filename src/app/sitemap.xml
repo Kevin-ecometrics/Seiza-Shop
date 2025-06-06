@@ -48,6 +48,37 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+  //
+    <url>
+    <loc>https://seiza.shop/blog/como-meditar-empezar-desde-cero</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+    <url>
+    <loc>https://seiza.shop/blog/diferentes-posturas-tu-yoga-tu-ritmo</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+    <url>
+    <loc>https://seiza.shop/blog/meditacion-poder-transformar-mente-cuerpo-emociones</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+    <url>
+    <loc>https://seiza.shop/blog/mitos-sobre-la-meditacion-verdad-detras-de-practica</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+    <url>
+    <loc>https://seiza.shop/blog/seiza-simple-postura-columna-sana-mente-en-paz</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+    <url>
+    <loc>https://seiza.shop/blog/tipos-de-meditacion-encuentra-tu-practica</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- Contact -->
   <url>
