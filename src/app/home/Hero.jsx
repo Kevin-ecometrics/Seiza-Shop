@@ -42,10 +42,11 @@ export default function Hero() {
       : isEn
       ? desktopBannersEn
       : desktopBannersEs;
+
   useEffect(() => {
     if (isMobile === null) return;
     setIndex((prev) => {
-      const arr = isMobile ? mobileBanners : desktopBanners;
+      const arr = isMobile ? mobileBanners : banners;
       return prev >= arr.length ? 0 : prev;
     });
   }, [isMobile]);
