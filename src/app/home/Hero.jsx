@@ -4,10 +4,16 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronLeft, FaChevronRight, FaCheck } from "react-icons/fa";
 import { useLanguage } from "@context/LanguageContext";
 
-const desktopBanners = [
-  { src: "/banner_hero1.webp", alt: "Seiza Banner 1" },
-  { src: "/banner_hero2.webp", alt: "Seiza Banner 2" },
+const desktopBannersEn = [
+  { src: "/banner_hero_en1.webp", alt: "English Banner 1" },
+  { src: "/banner_hero_en2.webp", alt: "English Banner 2" },
 ];
+
+const desktopBannersEs = [
+  { src: "/banner_hero1.webp", alt: "Spanish Banner 1" },
+  { src: "/banner_hero2.webp", alt: "Spanish Banner 2" },
+];
+
 const mobileBanners = [
   { src: "/banner_hero_mobile1.webp", alt: "Seiza Banner Mobile 1" },
   { src: "/banner_hero_mobile2.webp", alt: "Seiza Banner Mobile 2" },
@@ -29,7 +35,13 @@ export default function Hero() {
 
   // Corrige el index si cambia el tamaño y el array de banners es diferente
   const banners =
-    isMobile === null ? [] : isMobile ? mobileBanners : desktopBanners;
+    isMobile === null
+      ? []
+      : isMobile
+      ? mobileBanners
+      : isEn
+      ? desktopBannersEn
+      : desktopBannersEs;
   useEffect(() => {
     if (isMobile === null) return;
     setIndex((prev) => {

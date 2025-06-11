@@ -14,8 +14,7 @@ function About() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            src="/about.webp"
-            className="rounded-3xl"
+            src="/1. Home Seiza Banco.webp"
             alt={
               isEn
                 ? "Meditate and protect with Seiza"
