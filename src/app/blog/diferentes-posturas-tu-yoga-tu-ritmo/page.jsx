@@ -10,7 +10,7 @@ function page() {
       <Navbar />
       <section className="relative">
         <motion.img
-          src="/banner_blog_inside.webp"
+          src="/banner_blog_inside3.webp"
           className="h-auto w-full object-cover hidden md:block"
           alt="banner"
           initial={{ scale: 1.1 }}
@@ -18,7 +18,7 @@ function page() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         />
         <motion.img
-          src="/banner_blog_inside_mobile.webp"
+          src="/banner_blog_inside_mobile3.webp"
           className="h-screen w-full object-cover block md:hidden"
           alt="banner"
           initial={{ scale: 1.1 }}
@@ -53,91 +53,107 @@ function page() {
           pretensiones, permitiéndote fluir hacia tu propio bienestar. El resto,
           vendrá con el tiempo y la práctica.
         </p>
-
         {/* La Barca */}
         <h2 className="text-[35px] md:text-[50px] font-bold mb-6">
           La Barca (Naukasana)
         </h2>
-        <p className="text-xl mb-8 leading-relaxed">
-          Una de las mejores asanas para estirar la columna y promover la
-          flexibilidad, además de fortalecer el núcleo abdominal. Al principio
-          puede parecer un reto, pero lo importante es progresar, no
-          perfeccionar.
-        </p>
-        <ul className="list-disc list-inside text-xl mb-12 space-y-2">
-          <li>
-            No levantes las piernas por completo (mantenlas a unos centímetros
-            del suelo).
-          </li>
-          <li>Dobla ligeramente las rodillas para reducir la tensión.</li>
-          <li>
-            Coloca las manos bajo los glúteos para apoyar la pelvis si sientes
-            demasiada presión en la zona lumbar.
-          </li>
-        </ul>
-
+        <div className="md:flex gap-8">
+          <img src="/blog3.1.webp" alt="" className="size-96 mb-4" />
+          <div>
+            <p className="text-xl mb-8 leading-relaxed">
+              Una de las mejores asanas para estirar la columna y promover la
+              flexibilidad, además de fortalecer el núcleo abdominal. Al
+              principio puede parecer un reto, pero lo importante es progresar,
+              no perfeccionar.
+            </p>
+            <ul className="list-disc list-inside text-xl mb-12 space-y-2">
+              <li>
+                No levantes las piernas por completo (mantenlas a unos
+                centímetros del suelo).
+              </li>
+              <li>Dobla ligeramente las rodillas para reducir la tensión.</li>
+              <li>
+                Coloca las manos bajo los glúteos para apoyar la pelvis si
+                sientes demasiada presión en la zona lumbar.
+              </li>
+            </ul>
+          </div>
+        </div>
         {/* La Pinza */}
         <h2 className="text-[35px] md:text-[50px] font-bold mb-6">La Pinza</h2>
-        <p className="text-xl mb-12 leading-relaxed">
-          Consiste en inclinarse hacia adelante hasta que puedas sostener el
-          pecho con las piernas. Puede ser difícil al principio, pero mejora la
-          flexibilidad. La columna no debe arquearse, puedes empezar colocando
-          manos en rodillas o pantorrillas.
-        </p>
-
+        <div className="md:flex gap-8">
+          <img src="/blog3.2.webp" alt="" className="size-96 mb-4" />
+          <p className="text-xl mb-12 leading-relaxed">
+            Consiste en inclinarse hacia adelante hasta que puedas sostener el
+            pecho con las piernas. Puede ser difícil al principio, pero mejora
+            la flexibilidad. La columna no debe arquearse, puedes empezar
+            colocando manos en rodillas o pantorrillas.
+          </p>
+        </div>
         {/* Postura del Niño */}
         <h2 className="text-[35px] md:text-[50px] font-bold mb-6">
           Postura del Niño (Balasana)
         </h2>
-        <p className="text-xl mb-12 leading-relaxed">
-          También conocida como la postura de la hoja, es ese rincón de calma en
-          medio de la práctica. Siéntate sobre tus talones, lleva el torso hacia
-          adelante y apoya la frente en el suelo. Brazos estirados o junto al
-          cuerpo. Respira hondo y déjate ser.
-        </p>
-
+        <div className="md:flex gap-8">
+          <img src="/blog3.3.webp" alt="" className="size-96 mb-4" />
+          <p className="text-xl mb-12 leading-relaxed">
+            También conocida como la postura de la hoja, es ese rincón de calma
+            en medio de la práctica. Siéntate sobre tus talones, lleva el torso
+            hacia adelante y apoya la frente en el suelo. Brazos estirados o
+            junto al cuerpo. Respira hondo y déjate ser.
+          </p>
+        </div>
         {/* Perro Boca Abajo */}
         <h2 className="text-[35px] md:text-[50px] font-bold mb-6">
           Perro Boca Abajo (Adho Mukha Svanasana)
         </h2>
-        <p className="text-xl mb-12 leading-relaxed">
-          Estira músculos, alarga la columna, fortalece cuello y espalda. Apoya
-          manos y pies en el suelo, eleva las caderas. Si los isquiotibiales
-          están tensos, dobla ligeramente las rodillas.
-        </p>
-
+        <div className="md:flex gap-8">
+          <img src="/blog3.4.webp" alt="" className="size-96 mb-4" />
+          <p className="text-xl mb-12 leading-relaxed">
+            Estira músculos, alarga la columna, fortalece cuello y espalda.
+            Apoya manos y pies en el suelo, eleva las caderas. Si los
+            isquiotibiales están tensos, dobla ligeramente las rodillas.
+          </p>
+        </div>
         {/* Postura de la Montaña */}
         <h2 className="text-[35px] md:text-[50px] font-bold mb-6">
           Postura de la Montaña (Tadasana)
         </h2>
-        <p className="text-xl mb-12 leading-relaxed">
-          Una de las posturas más básicas pero esenciales. Activa grupos
-          musculares y promueve la concentración y la relajación del cuerpo.
-        </p>
-
+        <div className="md:flex gap-8">
+          <img src="/blog3.5.webp" alt="" className="size-96 mb-4" />
+          <p className="text-xl mb-12 leading-relaxed">
+            Una de las posturas más básicas pero esenciales. Activa grupos
+            musculares y promueve la concentración y la relajación del cuerpo.
+          </p>
+        </div>
         {/* Postura de Meditación */}
         <h2 className="text-[35px] md:text-[50px] font-bold mb-6">
           Postura de Meditación (Sukhasana o Padmasana)
-        </h2>
-        <p className="text-xl mb-12 leading-relaxed">
-          Ideal para comenzar o cerrar tu práctica. Siéntate sobre un cojín o
-          manta doblada. Rodillas relajadas, manos en mudra o sobre los muslos.
-          Espalda alargada y hombros relajados.
-        </p>
-
+        </h2>{" "}
+        <div className="md:flex gap-8">
+          <img src="/blog3.6.webp" alt="" className="size-96 mb-4" />
+          <p className="text-xl mb-12 leading-relaxed">
+            Ideal para comenzar o cerrar tu práctica. Siéntate sobre un cojín o
+            manta doblada. Rodillas relajadas, manos en mudra o sobre los
+            muslos. Espalda alargada y hombros relajados.
+          </p>
+        </div>
         {/* Phalakasana */}
         <h2 className="text-[35px] md:text-[50px] font-bold mb-6">
           Phalakasana (Tabla o Plancha)
         </h2>
-        <p className="text-xl mb-12 leading-relaxed">
-          Aparentemente simple, pero poderosa. Fortalece el abdomen y todo el
-          cuerpo. Alinea hombros con muñecas, activa el core y respira de forma
-          constante.
-        </p>
-
+        <div className="md:flex gap-8">
+          <img src="/blog3.7.webp" alt="" className="size-96 mb-4" />
+          <p className="text-xl mb-12 leading-relaxed">
+            Aparentemente simple, pero poderosa. Fortalece el abdomen y todo el
+            cuerpo. Alinea hombros con muñecas, activa el core y respira de
+            forma constante.
+          </p>
+        </div>
         {/* Banco Seiza */}
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-16 items-start">
-          <div className="h-[300px] md:h-[400px] xl:h-[600px] w-full bg-[#D9D9D9] rounded-lg flex items-center justify-center text-center p-8"></div>
+          <img src="/blog3.8.webp" alt="" className=" mb-4" />
+
           <div className="w-full">
             <h2 className="text-[35px] md:text-[50px] font-bold mb-8">
               Complementa tu práctica con nuestro banco Seiza

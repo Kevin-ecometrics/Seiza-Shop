@@ -10,7 +10,7 @@ function page() {
       <Navbar />
       <section className="relative">
         <motion.img
-          src="/banner_blog_inside.webp"
+          src="/banner_blog_inside2.webp"
           className="h-auto w-full object-cover hidden md:block"
           alt="banner"
           initial={{ scale: 1.1 }}
@@ -18,7 +18,7 @@ function page() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         />
         <motion.img
-          src="/banner_blog_inside_mobile.webp"
+          src="/banner_blog_inside_mobile2.webp"
           className="h-screen w-full object-cover block md:hidden"
           alt="banner"
           initial={{ scale: 1.1 }}
@@ -54,51 +54,65 @@ function page() {
         <h2 className="text-[35px] md:text-[50px] font-bold mb-6">
           Vipassana Meditation
         </h2>
-        <p className="text-xl mb-12 leading-relaxed">
-          Known as "insight meditation," Vipassana helps us see things as they
-          really are. It involves deep self-observation, allowing us to
-          understand our inner world and gradually let go of negative thoughts
-          and emotional pain. Mindfulness techniques are rooted in this
-          tradition.
-        </p>
+        <div className="md:flex gap-8">
+          <img src="/blog2.1.webp" alt="" className="size-96 mb-4" />
 
+          <p className="text-xl mb-12 leading-relaxed">
+            Known as "insight meditation," Vipassana helps us see things as they
+            really are. It involves deep self-observation, allowing us to
+            understand our inner world and gradually let go of negative thoughts
+            and emotional pain. Mindfulness techniques are rooted in this
+            tradition.
+          </p>
+        </div>
         <h2 className="text-[35px] md:text-[50px] font-bold mb-6">
           Buddhist Meditation
         </h2>
-        <p className="text-xl mb-12 leading-relaxed">
-          Also called "total meditation," its purpose is to stay present—fully
-          aware of the here and now. It invites us to embrace all thoughts,
-          sensations, and emotions without judgment, helping us take control of
-          our minds rather than being controlled by them.
-        </p>
+        <div className="md:flex gap-8">
+          <img src="/blog2.2.webp" alt="" className="size-96 mb-4" />
 
+          <p className="text-xl mb-12 leading-relaxed">
+            Also called "total meditation," its purpose is to stay present—fully
+            aware of the here and now. It invites us to embrace all thoughts,
+            sensations, and emotions without judgment, helping us take control
+            of our minds rather than being controlled by them.
+          </p>
+        </div>
         <h2 className="text-[35px] md:text-[50px] font-bold mb-6">
           Mantra Meditation
         </h2>
-        <p className="text-xl mb-12 leading-relaxed">
-          This technique involves chanting sacred sounds to enter deep
-          meditation. The vibration of the sounds affects both the voice and the
-          mind, creating a profound inner stillness.
-        </p>
+        <div className="md:flex gap-8">
+          <img src="/blog2.3.webp" alt="" className="size-96 mb-4" />
 
+          <p className="text-xl mb-12 leading-relaxed">
+            This technique involves chanting sacred sounds to enter deep
+            meditation. The vibration of the sounds affects both the voice and
+            the mind, creating a profound inner stillness.
+          </p>
+        </div>
         <h2 className="text-[35px] md:text-[50px] font-bold mb-6">
           Transcendental Meditation
         </h2>
-        <p className="text-xl mb-12 leading-relaxed">
-          Simple yet powerful: sit in silence, close your eyes, and softly
-          repeat a personalized mantra. Practiced for just 20 minutes a day, it
-          can deeply relax your body and mind.
-        </p>
-
-        <p className="text-xl mb-12 leading-relaxed italic">
-          There are many paths to calm. Some days your body needs silence,
-          others repetition or breath. Let yourself explore until you find the
-          practice that resonates with you. It's not about mastering a
-          technique, but finding a refuge that brings clarity amid daily chaos.
-        </p>
-
+        <div className="md:flex gap-8">
+          <img src="/blog2.4.webp" alt="" className="size-96 mb-4" />
+          <div>
+            <p className="text-xl mb-4 leading-relaxed">
+              Simple yet powerful: sit in silence, close your eyes, and softly
+              repeat a personalized mantra. Practiced for just 20 minutes a day,
+              it can deeply relax your body and mind.
+            </p>
+            <p className="text-xl mb-12 leading-relaxed italic">
+              There are many paths to calm. Some days your body needs silence,
+              others repetition or breath. Let yourself explore until you find
+              the practice that resonates with you. It's not about mastering a
+              technique, but finding a refuge that brings clarity amid daily
+              chaos.
+            </p>
+          </div>
+        </div>
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-16 items-start">
-          <div className="h-[300px] md:h-[400px] xl:h-[600px] w-full bg-[#D9D9D9] rounded-lg flex items-center justify-center text-center p-8"></div>
+          <img src="/blog2.5.webp" alt="" className="mb-4" />
+
           <div className="w-full">
             <h2 className="text-[35px] md:text-[50px] font-bold mb-8">
               Complement Your Practice: The Seiza Bench

@@ -20,6 +20,7 @@ const blogCardsData = [
       title: "Meditation: The Power to Transform Your Mind, Body, and Emotions",
       text: "Beyond a spiritual practice, science supports its physical, emotional, and cognitive benefits. In a world so fast-paced, competitive, and lacking empathy, work, activities, and even socializing fill us with a thick fog of overwhelm and what we know as burnout. Therefore, meditation practice has gained more popularity.",
       url: "/blog/meditation-power-transform-mind-body-emotions",
+      image: "/banner_blog_inside_mobile1.webp",
       date: "March 15, 2025",
       readTime: "5 min read",
       author: "Seiza Shop",
@@ -28,6 +29,8 @@ const blogCardsData = [
     es: {
       title: "Meditación: El Poder de Transformar tu Mente, Cuerpo y Emociones",
       text: "Más allá de una práctica espiritual, la ciencia respalda sus beneficios físicos, emocionales y cognitivos. En un mundo tan acelerado, competitivo y con ausencia de empatía, cada vez el trabajo, nuestras actividades e incluso la convivencia nos llena de una bruma espesa de agobio y lo que conocemos como burnout. Por lo tanto, la práctica de la meditación ha tenido más auge.",
+      image: "/banner_blog_inside_mobile1.webp",
+
       url: "/blog/meditacion-poder-transformar-mente-cuerpo-emociones",
       date: "15 de Marzo, 2025",
       readTime: "5 min de lectura",
@@ -40,6 +43,8 @@ const blogCardsData = [
       title: "Types of Meditation: Find the Practice That Resonates With You",
       text: "Meditation as a refuge amid the noise. We are always connected to the outside world because it never rests: stimuli, screens, and notifications keep coming. The stress of everyday life increases, leaving our mind restless, body tense, making it difficult to simply rest or even fall asleep.",
       url: "/blog/types-of-meditation-find-your-practice",
+      image: "/banner_blog_inside_mobile2.webp",
+
       date: "March 10, 2025",
       readTime: "7 min read",
       author: "Seiza Shop",
@@ -49,6 +54,8 @@ const blogCardsData = [
       title: "Tipos de Meditación: Encuentra la Práctica que Resuena Contigo",
       text: "Meditación como refugio en medio del ruido. Siempre estamos conectados con el mundo exterior ya que este no descansa: estímulos, pantallas y notificaciones llegan sin parar. El estrés de la vida cotidiana aumenta, nos deja la mente agitada, el cuerpo tenso, dificultando el simple acto de descansar e incluso dificulta la conciliación del sueño.",
       url: "/blog/tipos-de-meditacion-encuentra-tu-practica",
+      image: "/banner_blog_inside_mobile2.webp",
+
       date: "10 de Marzo, 2025",
       readTime: "7 min de lectura",
       author: "Seiza Shop",
@@ -59,6 +66,8 @@ const blogCardsData = [
     en: {
       title: "Different Postures: Your Yoga, Your Pace",
       text: "Yoga does not demand perfect conditions. You can start today, at home, in your free time, with nothing else required but the desire to try. It doesn't matter if it's calm in the morning or a break at work, amid stress and bustle. This practice adapts to you, not the other way around.",
+      image: "/banner_blog_inside_mobile3.webp",
+
       url: "/blog/different-postures-your-yoga-pace",
       date: "March 5, 2025",
       readTime: "6 min read",
@@ -68,6 +77,8 @@ const blogCardsData = [
     es: {
       title: "Diferentes Posturas: Tu Yoga, Tu Ritmo",
       text: "El yoga no exige condiciones perfectas. Puedes empezar hoy, en casa, en un rato libre, sin más requisito que las ganas de probar. No importa si es por la mañana con calma o en una pausa del trabajo, entre el estrés y el ajetreo. Esta práctica se adapta a ti, no al revés.",
+      image: "/banner_blog_inside_mobile3.webp",
+
       url: "/blog/diferentes-posturas-tu-yoga-tu-ritmo",
       date: "5 de Marzo, 2025",
       readTime: "6 min de lectura",
@@ -80,6 +91,8 @@ const blogCardsData = [
       title: "Seiza: A Simple Posture for a Healthy Spine and a Peaceful Mind",
       text: "Seiza —that traditional Japanese way of sitting on the knees— transcends its use in martial arts like Iaido or ceremonies like Chanoyu (tea ceremony). Today, it is rediscovered as a powerful psychotherapeutic tool and a spiritual practice.",
       url: "/blog/seiza-simple-posture-healthy-spine-peaceful-mind",
+      image: "/banner_blog_inside_mobile.webp",
+
       date: "February 28, 2025",
       readTime: "4 min read",
       author: "Seiza Shop",
@@ -90,6 +103,8 @@ const blogCardsData = [
         "Seiza: Una Simple Postura para una Columna Sana y una Mente en Paz",
       text: "Seiza —ese modo tradicional japonés de sentarse sobre las rodillas— trasciende su uso en artes marciales como el Iaido o ceremonias como el chanoyu (ceremonia del té). Hoy, se redescubre como una poderosa herramienta psicoterapéutica y una práctica espiritual.",
       url: "/blog/seiza-simple-postura-columna-sana-mente-en-paz",
+      image: "/banner_blog_inside_mobile.webp",
+
       date: "28 de Febrero, 2025",
       readTime: "4 min de lectura",
       author: "Seiza Shop",
@@ -101,6 +116,8 @@ const blogCardsData = [
       title: "How to Meditate: Starting from Scratch",
       text: "Meditation: a path to holistic well-being. It is a powerful tool to improve quality of life, both mentally and physically. However, starting meditation requires patience and consistency, as it is a gradual process cultivated with practice.",
       url: "/blog/how-to-meditate-starting-from-scratch",
+      image: "/banner_blog_inside_mobile.webp",
+
       date: "February 20, 2025",
       readTime: "8 min read",
       author: "Seiza Shop",
@@ -110,6 +127,8 @@ const blogCardsData = [
       title: "Cómo Meditar: Empezar desde cero",
       text: "La meditación: un camino hacia el bienestar integral. Se trata de una herramienta poderosa para mejorar la calidad de vida, tanto a nivel mental como físico. Sin embargo, iniciarse en la meditación requiere paciencia y constancia, pues es un proceso gradual que se cultiva con la práctica.",
       url: "/blog/como-meditar-empezar-desde-cero",
+      image: "/banner_blog_inside_mobile.webp",
+
       date: "20 de Febrero, 2025",
       readTime: "8 min de lectura",
       author: "Seiza Shop",
@@ -120,6 +139,8 @@ const blogCardsData = [
     en: {
       title: "Meditation Myths: Discovering the Truth Behind the Practice",
       text: "Some believe meditation should lead to mystical visions, divine enlightenment, or out-of-body experiences. While meditation can generate deep feelings of peace and happiness, its true purpose is not to reach extraordinary phenomena but to cultivate a clearer and calmer mind.",
+      image: "/banner_blog_inside_mobile.webp",
+
       url: "/blog/meditation-myths-truth-behind-practice",
       date: "February 15, 2025",
       readTime: "6 min read",
@@ -133,6 +154,8 @@ const blogCardsData = [
       url: "/blog/mitos-sobre-la-meditacion-verdad-detras-de-practica",
       date: "15 de Febrero, 2025",
       readTime: "6 min de lectura",
+      image: "/banner_blog_inside_mobile.webp",
+
       author: "Seiza Shop",
       category: "Educación",
     },
@@ -262,7 +285,9 @@ function BlogPage() {
                       isMobile ? "w-full h-[500px]" : "w-80 h-[520px]"
                     }`}
                     style={{
-                      backgroundImage: `url(/banner_blog_inside_mobile.webp)`,
+                      backgroundImage: `url(${
+                        isEn ? card.en.image : card.es.image
+                      })`,
                     }}
                   >
                     {/* Gradient overlay base - más fuerte para mejor contraste */}

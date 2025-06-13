@@ -10,7 +10,7 @@ function page() {
       <Navbar />
       <section className="relative">
         <motion.img
-          src="/banner_blog_inside.webp"
+          src="/banner_blog_inside2.webp"
           className="h-auto w-full object-cover hidden md:block"
           alt="banner"
           initial={{ scale: 1.1 }}
@@ -18,7 +18,7 @@ function page() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         />
         <motion.img
-          src="/banner_blog_inside_mobile.webp"
+          src="/banner_blog_inside_mobile2.webp"
           className="h-screen w-full object-cover block md:hidden"
           alt="banner"
           initial={{ scale: 1.1 }}
@@ -59,53 +59,66 @@ function page() {
         <h2 className="text-[35px] md:text-[50px] font-bold mb-6">
           Meditación Vipassana
         </h2>
-        <p className="text-xl mb-12 leading-relaxed">
-          Otra de las prácticas más conocidas, se conoce como la “meditación
-          penetrante”. La técnica de mindfulness se basa en este tipo de
-          meditación, la cual te permite observarte a ti mismo para controlar
-          pensamientos negativos y dolencias emocionales.
-        </p>
+        <div className="md:flex gap-8">
+          <img src="/blog2.1.webp" alt="" className="size-96 mb-4" />
 
+          <p className="text-xl mb-12 leading-relaxed">
+            Otra de las prácticas más conocidas, se conoce como la “meditación
+            penetrante”. La técnica de mindfulness se basa en este tipo de
+            meditación, la cual te permite observarte a ti mismo para controlar
+            pensamientos negativos y dolencias emocionales.
+          </p>
+        </div>
         <h2 className="text-[35px] md:text-[50px] font-bold mb-6">
           Meditación Budista
         </h2>
-        <p className="text-xl mb-12 leading-relaxed">
-          Es una técnica llamada “meditación total” y su finalidad es intentar
-          enfocar la mente por completo en el presente. Busca enfocarse en las
-          perturbaciones internas para reconectarnos con nuestra esencia y
-          soltar pensamientos limitantes.
-        </p>
+        <div className="md:flex gap-8">
+          <img src="/blog2.2.webp" alt="" className="size-96 mb-4" />
 
+          <p className="text-xl mb-12 leading-relaxed">
+            Es una técnica llamada “meditación total” y su finalidad es intentar
+            enfocar la mente por completo en el presente. Busca enfocarse en las
+            perturbaciones internas para reconectarnos con nuestra esencia y
+            soltar pensamientos limitantes.
+          </p>
+        </div>
         <h2 className="text-[35px] md:text-[50px] font-bold mb-6">
           Meditación Mantra
         </h2>
-        <p className="text-xl mb-12 leading-relaxed">
-          Un mantra es un canto sagrado que permite entrar en un estado profundo
-          de meditación. Estos cánticos hacen vibrar las cuerdas vocales y
-          generan ondas vibratorias en la mente, logrando una meditación
-          completa.
-        </p>
+        <div className="md:flex gap-8">
+          <img src="/blog2.3.webp" alt="" className="size-96 mb-4" />
 
+          <p className="text-xl mb-12 leading-relaxed">
+            Un mantra es un canto sagrado que permite entrar en un estado
+            profundo de meditación. Estos cánticos hacen vibrar las cuerdas
+            vocales y generan ondas vibratorias en la mente, logrando una
+            meditación completa.
+          </p>
+        </div>
         <h2 className="text-[35px] md:text-[50px] font-bold mb-6">
           Meditación Trascendental
         </h2>
-        <p className="text-xl mb-12 leading-relaxed">
-          Su práctica es sencilla, pero poderosa: solo necesitas sentarte en
-          silencio, cerrar los ojos y repetir suavemente un mantra
-          personalizado. Con solo 20 minutos al día, logra liberar tensiones y
-          conectar con un estado de profunda relajación.
-        </p>
-
-        <p className="text-xl mb-12 leading-relaxed italic">
-          Existen diferentes caminos hacia la calma. Tu mente y tu cuerpo saben
-          qué necesitan; a veces es silencio, otras, repetición o simplemente
-          respirar. Déjate llevar hasta descubrir qué práctica resuena contigo.
-          Al final, no se trata de dominar una técnica, sino de encontrar ese
-          refugio interno que te devuelva la claridad.
-        </p>
-
+        <div className="md:flex gap-8">
+          <img src="/blog2.4.webp" alt="" className="size-96 mb-4" />
+          <div>
+            <p className="text-xl mb-4 leading-relaxed">
+              Su práctica es sencilla, pero poderosa: solo necesitas sentarte en
+              silencio, cerrar los ojos y repetir suavemente un mantra
+              personalizado. Con solo 20 minutos al día, logra liberar tensiones
+              y conectar con un estado de profunda relajación.
+            </p>
+            <p className="text-xl mb-12 leading-relaxed italic">
+              Existen diferentes caminos hacia la calma. Tu mente y tu cuerpo
+              saben qué necesitan; a veces es silencio, otras, repetición o
+              simplemente respirar. Déjate llevar hasta descubrir qué práctica
+              resuena contigo. Al final, no se trata de dominar una técnica,
+              sino de encontrar ese refugio interno que te devuelva la claridad.
+            </p>
+          </div>
+        </div>
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-16 items-start">
-          <div className="h-[300px] md:h-[400px] xl:h-[600px] w-full bg-[#D9D9D9] rounded-lg flex items-center justify-center text-center p-8"></div>
+          <img src="/blog2.5.webp" alt="" />
+
           <div className="w-full">
             <h2 className="text-[35px] md:text-[50px] font-bold mb-8">
               Complementa tu Práctica con el Banco Seiza

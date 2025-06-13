@@ -79,7 +79,8 @@ function page() {
 
         {/* Cortisol */}
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-12 items-start">
-          <div className="h-[300px] md:h-[400px] xl:h-[600px] w-full bg-[#D9D9D9] rounded-lg flex items-center justify-center text-center p-8"></div>
+          <img src="/blog1.1.webp" alt="" />
+
           <div className="w-full">
             <h2 className="text-[35px] md:text-[50px] font-bold mb-8">
               Meditación: La mejor herramienta para reducir el cortisol
@@ -126,7 +127,7 @@ function page() {
               </li>
             </ul>
           </div>
-          <div className="h-[300px] md:h-[400px] xl:h-[600px] w-full bg-[#D9D9D9] rounded-lg"></div>
+          <img src="/blog1.2.webp" alt="" />
         </div>
 
         {/* Manejo de la ansiedad */}
@@ -179,7 +180,8 @@ function page() {
 
         {/* Banco Seiza */}
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-16 items-start">
-          <div className="h-[300px] md:h-[400px] xl:h-[600px] w-full bg-[#D9D9D9] rounded-lg flex items-center justify-center text-center p-8"></div>
+          <img src="/blog1.3.webp" alt="" />
+
           <div className="w-full">
             <h2 className="text-[35px] md:text-[50px] font-bold mb-8">
               Banco Seiza: tu aliado en la meditación
